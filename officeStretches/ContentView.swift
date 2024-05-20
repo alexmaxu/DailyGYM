@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    let dailyRoutine: String = "Daily Routine"
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            ProfileCell()
+            DailyStretches(title: dailyRoutine, image: .ejercise1)
+                .padding(.horizontal)
+            Spacer()
+            
+            HistoryCell()
+            
         }
-        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.cyan.opacity(0.2))
+        
     }
 }
 
