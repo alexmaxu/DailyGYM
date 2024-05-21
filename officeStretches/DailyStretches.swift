@@ -13,7 +13,7 @@ struct DailyStretches: View {
     var body: some View {
         VStack (spacing: 16){
             Text(title)
-                .font(.headline)
+                .font(.title)
                 .bold()
                 .padding(.top)
                 
@@ -21,7 +21,8 @@ struct DailyStretches: View {
                 .resizable()
                 .scaledToFit()
                 .clipShape(RoundedRectangle(cornerRadius: 15))
-                .padding([.leading, .trailing, .bottom])
+                .padding(.horizontal)
+                
                 
         }
         .clipShape(RoundedRectangle(cornerRadius: 10))

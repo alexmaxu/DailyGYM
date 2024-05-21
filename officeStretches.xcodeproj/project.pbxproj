@@ -14,7 +14,7 @@
 		5F6ECDD92BFB2F220020644D /* DailyStretches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6ECDD82BFB2F220020644D /* DailyStretches.swift */; };
 		5F6ECDDD2BFB35560020644D /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6ECDDC2BFB35560020644D /* ProfileCell.swift */; };
 		5F6ECDDF2BFB37690020644D /* MyStretches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6ECDDE2BFB37690020644D /* MyStretches.swift */; };
-		5F6ECDE12BFB39140020644D /* MyStretchesTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6ECDE02BFB39140020644D /* MyStretchesTitle.swift */; };
+		5F6ECDE12BFB39140020644D /* MyStretchesCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6ECDE02BFB39140020644D /* MyStretchesCard.swift */; };
 		5F6ECDE32BFB3E4C0020644D /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6ECDE22BFB3E4C0020644D /* HistoryCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,7 +27,7 @@
 		5F6ECDD82BFB2F220020644D /* DailyStretches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStretches.swift; sourceTree = "<group>"; };
 		5F6ECDDC2BFB35560020644D /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		5F6ECDDE2BFB37690020644D /* MyStretches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStretches.swift; sourceTree = "<group>"; };
-		5F6ECDE02BFB39140020644D /* MyStretchesTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStretchesTitle.swift; sourceTree = "<group>"; };
+		5F6ECDE02BFB39140020644D /* MyStretchesCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStretchesCard.swift; sourceTree = "<group>"; };
 		5F6ECDE22BFB3E4C0020644D /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,7 +84,7 @@
 				5F6ECDD82BFB2F220020644D /* DailyStretches.swift */,
 				5F6ECDDC2BFB35560020644D /* ProfileCell.swift */,
 				5F6ECDDE2BFB37690020644D /* MyStretches.swift */,
-				5F6ECDE02BFB39140020644D /* MyStretchesTitle.swift */,
+				5F6ECDE02BFB39140020644D /* MyStretchesCard.swift */,
 				5F6ECDE22BFB3E4C0020644D /* HistoryCell.swift */,
 			);
 			name = Components;
@@ -176,7 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F6ECDE12BFB39140020644D /* MyStretchesTitle.swift in Sources */,
+				5F6ECDE12BFB39140020644D /* MyStretchesCard.swift in Sources */,
 				5F6ECDE32BFB3E4C0020644D /* HistoryCell.swift in Sources */,
 				5F6ECDCC2BFB20A50020644D /* ContentView.swift in Sources */,
 				5F6ECDDD2BFB35560020644D /* ProfileCell.swift in Sources */,

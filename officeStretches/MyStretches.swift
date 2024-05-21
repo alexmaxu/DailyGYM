@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct MyStretches: View {
-    let arrayStretches: [String] = ["Morning Routine", "neck stretch"]
+    let arrayStretches: [String] = ["My Morning Routine", "My Neck stretch"]
     var body: some View {
         TabView {
             ForEach(arrayStretches, id:\.self) { stretch in
-                MyStretchesTitle(image: .ejercise1, title: stretch)
+                MyStretchesCard(image: .ejercise1, title: stretch)
             }
         }
         .tabViewStyle(PageTabViewStyle())
         
-        .frame(maxWidth: .infinity)
-        .frame(height: 400)
+//        .frame(maxWidth: .infinity)
+        .frame(height: 90)
     }
 }
 

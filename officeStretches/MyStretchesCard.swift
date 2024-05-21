@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MyStretchesTitle: View {
+struct MyStretchesCard: View {
     let image: ImageResource
     let title: String
     var body: some View {
@@ -16,16 +16,13 @@ struct MyStretchesTitle: View {
                 Text(title)
                     .font(.headline)
                     .bold()
-                    .padding(.vertical)
-                Image(image)
-                    .resizable()
-                    .scaledToFit()
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .padding([.leading, .trailing, .bottom])
+                    .padding(.bottom, 24)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 90)
             }
             
-            
         }
+        
         .background(.cyan.opacity(0.3))
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .padding(.horizontal)
@@ -34,5 +31,5 @@ struct MyStretchesTitle: View {
 }
 
 #Preview {
-    MyStretchesTitle(image: .ejercise1, title: "Morning Routine")
+    MyStretchesCard(image: .ejercise1, title: "Morning Routine")
 }
