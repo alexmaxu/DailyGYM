@@ -16,8 +16,6 @@ struct MyStretches: View {
             }
         }
         .tabViewStyle(PageTabViewStyle())
-        
-//        .frame(maxWidth: .infinity)
         .frame(height: 90)
     }
 }

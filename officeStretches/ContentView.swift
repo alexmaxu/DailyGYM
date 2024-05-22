@@ -8,50 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var vm = MainViewVM()
+    
     let dailyRoutine: String = "Daily Routine"
     let arrayImages: [ImageResource] = [.ejercise1,.ejercise1,.ejercise1,.ejercise1]
+    
+    
     var body: some View {
         VStack {
             ProfileCell()
             DailyStretches(title: dailyRoutine, image: .ejercise1)
-            Spacer()
             ScrollView(.horizontal) {
                 HStack {
-                    ForEach(arrayImages, id:\.self) { card in
-                        VStack {
-                            Text("Title Exercise")
-                                .padding(.top)
-                            Image(card)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 200)
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
-                                .padding([.bottom, .horizontal])
-                        }
-                        .background(Color.cyan.opacity(0.3))
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                        .padding(.top)
-                        
+                    ForEach(vm.exercises) { exercise in
+                        Text(exercise.workOut)
                     }
-                    
                 }
                 
             }
-            .scrollIndicators(.hidden)
-            .scrollTargetBehavior(.viewAligned)
-            Spacer()
+            ExerciseListScrollView()
             MyStretches()
-            Spacer()
             HistoryCell()
-            
         }
         .background(
-            LinearGradient(gradient: Gradient(colors: [Color.cyan.opacity(0.2), Color.cyan.opacity(0.4)]), startPoint: .top, endPoint: .bottom)
+            LinearGradient(gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(0.5)]), startPoint: .top, endPoint: .bottom)
         )
-        
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(vm: MainViewVM(exerciseInteractor: PreviewExerciseInteractor()))
 }
