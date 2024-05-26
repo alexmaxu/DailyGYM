@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Exercise: Codable, Identifiable {
+struct Exercise: Codable, Identifiable, Hashable{
     let id = UUID()
     let muscles: Muscles
     let workOut: String
@@ -51,7 +51,9 @@ enum IntermediateSets: String, Codable {
     case the4SetsWith8To12Reps = "4 Sets with 8 to 12 reps"
 }
  
-enum Muscles: String, Codable {
+enum Muscles: String, Codable, CaseIterable, Identifiable {
+    var id: Self {self}
+    
     case Biceps
     case Triceps
     case Chest
@@ -67,4 +69,5 @@ enum Muscles: String, Codable {
     case Trapezius
     case Shoulders
     case Glutes
+    case All = ""
 }

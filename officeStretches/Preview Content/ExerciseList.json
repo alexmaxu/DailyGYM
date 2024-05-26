@@ -1,7 +1,7 @@
 [
   {
     "Muscles": "Biceps",
-    "WorkOut": "Preview Barbell Curl",
+    "WorkOut": "PREVIEW Barbell Curl",
     "Intensity_Level": "Beginner",
     "Beginner Sets": "3 Sets with 12 to 15 reps",
     "Intermediate Sets": "4 Sets with 8 to 12 reps",
@@ -13,7 +13,7 @@
   },
   {
     "Muscles": "Biceps",
-    "WorkOut": "Dumbbell Curl",
+    "WorkOut": "PREVIEW Dumbbell Curl",
     "Intensity_Level": "Beginner",
     "Beginner Sets": "3 Sets with 12 to 15 reps",
     "Intermediate Sets": "4 Sets with 8 to 12 reps",

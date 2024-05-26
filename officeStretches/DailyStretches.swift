@@ -15,17 +15,17 @@ struct DailyStretches: View {
             Text(title)
                 .font(.title)
                 .bold()
-                .padding(.top)
                 
+            
             Image(image)
                 .resizable()
                 .scaledToFit()
                 .clipShape(RoundedRectangle(cornerRadius: 15))
-                .padding(.horizontal)
-                
-                
+                .padding([.horizontal, .bottom])
+                .shadow(color: .black.opacity(0.4), radius: 5, x: 0, y: 10)
         }
         .clipShape(RoundedRectangle(cornerRadius: 10))
+        
     }
 }
 

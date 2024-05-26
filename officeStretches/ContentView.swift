@@ -16,24 +16,26 @@ struct ContentView: View {
     
     
     var body: some View {
-        VStack {
-            ProfileCell()
-            DailyStretches(title: dailyRoutine, image: .ejercise1)
-            ScrollView(.horizontal) {
-                HStack {
-                    ForEach(vm.exercises) { exercise in
-                        Text(exercise.workOut)
-                    }
-                }
-                
+        NavigationStack {
+            VStack {
+                ProfileCell()
+                DailyStretches(title: dailyRoutine, image: .ejercise1)
+                ExerciseListScrollView()
+                MyStretches()
+                TitleRow(title: "My Exercises")
             }
-            ExerciseListScrollView()
-            MyStretches()
-            HistoryCell()
+            .navigationDestination(for: Muscles.self, destination: { muscle in
+                MuscleExercisesList()
+            
+            })
+            .navigationDestination(for: Exercise.self, destination: { exercise in
+                Text(exercise.workOut)
+            })
+            .background(
+                LinearGradient(gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(0.5)]), startPoint: .top, endPoint: .bottom)
+            )
         }
-        .background(
-            LinearGradient(gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(0.5)]), startPoint: .top, endPoint: .bottom)
-        )
+        
     }
 }
 

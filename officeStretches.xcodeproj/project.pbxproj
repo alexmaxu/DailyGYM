@@ -15,7 +15,10 @@
 		5F6ECDDD2BFB35560020644D /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6ECDDC2BFB35560020644D /* ProfileCell.swift */; };
 		5F6ECDDF2BFB37690020644D /* MyStretches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6ECDDE2BFB37690020644D /* MyStretches.swift */; };
 		5F6ECDE12BFB39140020644D /* MyStretchesCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6ECDE02BFB39140020644D /* MyStretchesCard.swift */; };
-		5F6ECDE32BFB3E4C0020644D /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6ECDE22BFB3E4C0020644D /* HistoryCell.swift */; };
+		5F6ECDE32BFB3E4C0020644D /* TitleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6ECDE22BFB3E4C0020644D /* TitleRow.swift */; };
+		5F9628942C01C41B00C4DC98 /* MuscleExercisesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9628932C01C41B00C4DC98 /* MuscleExercisesList.swift */; };
+		5F9628962C01C44100C4DC98 /* MuscleExerviseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9628952C01C44100C4DC98 /* MuscleExerviseVM.swift */; };
+		5F9628982C01D88D00C4DC98 /* ExerciseListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9628972C01D88D00C4DC98 /* ExerciseListRow.swift */; };
 		5FAA3C8E2BFD2FD800D4297F /* ExerciseListScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA3C8D2BFD2FD800D4297F /* ExerciseListScrollView.swift */; };
 		5FAA3C912BFD3A9D00D4297F /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA3C902BFD3A9C00D4297F /* ExerciseModel.swift */; };
 		5FAA3C942BFD3C6D00D4297F /* NetworkInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA3C932BFD3C6D00D4297F /* NetworkInteractor.swift */; };
@@ -39,7 +42,10 @@
 		5F6ECDDC2BFB35560020644D /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		5F6ECDDE2BFB37690020644D /* MyStretches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStretches.swift; sourceTree = "<group>"; };
 		5F6ECDE02BFB39140020644D /* MyStretchesCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStretchesCard.swift; sourceTree = "<group>"; };
-		5F6ECDE22BFB3E4C0020644D /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		5F6ECDE22BFB3E4C0020644D /* TitleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleRow.swift; sourceTree = "<group>"; };
+		5F9628932C01C41B00C4DC98 /* MuscleExercisesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleExercisesList.swift; sourceTree = "<group>"; };
+		5F9628952C01C44100C4DC98 /* MuscleExerviseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleExerviseVM.swift; sourceTree = "<group>"; };
+		5F9628972C01D88D00C4DC98 /* ExerciseListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListRow.swift; sourceTree = "<group>"; };
 		5FAA3C8D2BFD2FD800D4297F /* ExerciseListScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListScrollView.swift; sourceTree = "<group>"; };
 		5FAA3C902BFD3A9C00D4297F /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
 		5FAA3C932BFD3C6D00D4297F /* NetworkInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInteractor.swift; sourceTree = "<group>"; };
@@ -113,8 +119,9 @@
 				5F6ECDDC2BFB35560020644D /* ProfileCell.swift */,
 				5F6ECDDE2BFB37690020644D /* MyStretches.swift */,
 				5F6ECDE02BFB39140020644D /* MyStretchesCard.swift */,
-				5F6ECDE22BFB3E4C0020644D /* HistoryCell.swift */,
+				5F6ECDE22BFB3E4C0020644D /* TitleRow.swift */,
 				5FAA3C8D2BFD2FD800D4297F /* ExerciseListScrollView.swift */,
+				5F9628972C01D88D00C4DC98 /* ExerciseListRow.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -131,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				5F6ECDCB2BFB20A50020644D /* ContentView.swift */,
+				5F9628932C01C41B00C4DC98 /* MuscleExercisesList.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -167,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				5FC108D62BFDFCA0004B33FE /* MainViewVM.swift */,
+				5F9628952C01C44100C4DC98 /* MuscleExerviseVM.swift */,
 			);
 			name = VM;
 			sourceTree = "<group>";
@@ -244,11 +253,13 @@
 			files = (
 				5F6ECDE12BFB39140020644D /* MyStretchesCard.swift in Sources */,
 				5FAA3C9D2BFD436B00D4297F /* URLRequest.swift in Sources */,
+				5F9628942C01C41B00C4DC98 /* MuscleExercisesList.swift in Sources */,
 				5FC108DD2BFE04E4004B33FE /* PreviewData.swift in Sources */,
-				5F6ECDE32BFB3E4C0020644D /* HistoryCell.swift in Sources */,
+				5F6ECDE32BFB3E4C0020644D /* TitleRow.swift in Sources */,
 				5FAA3C962BFD3E0E00D4297F /* URLSession.swift in Sources */,
 				5F6ECDCC2BFB20A50020644D /* ContentView.swift in Sources */,
 				5F6ECDDD2BFB35560020644D /* ProfileCell.swift in Sources */,
+				5F9628982C01D88D00C4DC98 /* ExerciseListRow.swift in Sources */,
 				5FAA3C9A2BFD427C00D4297F /* URL.swift in Sources */,
 				5F6ECDD92BFB2F220020644D /* DailyStretches.swift in Sources */,
 				5FC108D42BFDDB74004B33FE /* ExerciseInteractor.swift in Sources */,
@@ -256,6 +267,7 @@
 				5F6ECDDF2BFB37690020644D /* MyStretches.swift in Sources */,
 				5FAA3C942BFD3C6D00D4297F /* NetworkInteractor.swift in Sources */,
 				5FAA3C982BFD3EF100D4297F /* NetworkError.swift in Sources */,
+				5F9628962C01C44100C4DC98 /* MuscleExerviseVM.swift in Sources */,
 				5FAA3C912BFD3A9D00D4297F /* ExerciseModel.swift in Sources */,
 				5FC108D72BFDFCA0004B33FE /* MainViewVM.swift in Sources */,
 				5F6ECDCA2BFB20A50020644D /* officeStretchesApp.swift in Sources */,
