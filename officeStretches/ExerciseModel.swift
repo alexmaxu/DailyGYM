@@ -51,7 +51,7 @@ enum IntermediateSets: String, Codable {
     case the4SetsWith8To12Reps = "4 Sets with 8 to 12 reps"
 }
  
-enum Muscles: String, Codable, CaseIterable, Identifiable {
+enum Muscles: String, Codable, CaseIterable, Identifiable, Hashable {
     var id: Self {self}
     
     case Biceps

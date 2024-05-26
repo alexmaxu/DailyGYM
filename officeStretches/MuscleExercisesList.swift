@@ -9,7 +9,16 @@ import SwiftUI
 
 struct MuscleExercisesList: View {
     
-    @ObservedObject var vm = MuscleExerviseVM()
+//    var muscle: Muscles
+//    
+//    @ObservedObject var vm = MuscleExerviseVM(muscleTag: muscle)
+//
+    
+    @ObservedObject var vm : MuscleExerciseVM
+    
+    init(vm: MuscleExerciseVM) {
+        self.vm = vm
+    }
     
     var body: some View {
         ScrollView {
@@ -27,5 +36,5 @@ struct MuscleExercisesList: View {
 }
 
 #Preview {
-    MuscleExercisesList(vm: MuscleExerviseVM(exerciseInteractor: PreviewExerciseInteractor()))
+    MuscleExercisesList(vm: MuscleExerciseVM(exerciseInteractor: PreviewExerciseInteractor(), muscleTag: .Biceps))
 }

@@ -21,7 +21,7 @@ struct ExerciseListScrollView: View {
                             Image(muscle.rawValue)
                                 .resizable()
                                 .scaledToFill()
-                                .frame(width: 200, height: 180)
+                                .frame(width: 200, height: 130)
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
                                 .padding([.bottom, .horizontal])
                                 .shadow(color: .black.opacity(0.4), radius: 5, x: 0, y: 10)

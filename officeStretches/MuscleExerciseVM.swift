@@ -6,18 +6,19 @@
 //
 
 import Foundation
-final class MuscleExerviseVM: ObservableObject {
+final class MuscleExerciseVM: ObservableObject {
     
     let exerciseInteractor: ExerciseInteractorProtocol
     
     @Published var muscleExercises: [Exercise] = []
     @Published var searchText: String = ""
     
-    var muscleTag: Muscles = .All
+    var muscleTag: Muscles
     
     
-    init(exerciseInteractor: ExerciseInteractorProtocol = ExerciseInteractor.shared) {
+    init(exerciseInteractor: ExerciseInteractorProtocol = ExerciseInteractor.shared, muscleTag: Muscles) {
         self.exerciseInteractor = exerciseInteractor
+        self.muscleTag = muscleTag
         Task {
             await getMuscleExerciseList()
         }

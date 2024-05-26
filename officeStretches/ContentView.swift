@@ -20,12 +20,14 @@ struct ContentView: View {
             VStack {
                 ProfileCell()
                 DailyStretches(title: dailyRoutine, image: .ejercise1)
+                Spacer()
                 ExerciseListScrollView()
+                Spacer()
                 MyStretches()
                 TitleRow(title: "My Exercises")
             }
             .navigationDestination(for: Muscles.self, destination: { muscle in
-                MuscleExercisesList()
+                MuscleExercisesList(vm: MuscleExerciseVM(muscleTag: muscle))
             
             })
             .navigationDestination(for: Exercise.self, destination: { exercise in
