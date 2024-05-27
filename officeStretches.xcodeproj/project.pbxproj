@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F09CDB22C04616D000F6E49 /* ExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F09CDB12C04616D000F6E49 /* ExerciseDetailView.swift */; };
 		5F6ECDCA2BFB20A50020644D /* officeStretchesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6ECDC92BFB20A50020644D /* officeStretchesApp.swift */; };
 		5F6ECDCC2BFB20A50020644D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6ECDCB2BFB20A50020644D /* ContentView.swift */; };
 		5F6ECDCE2BFB20A60020644D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F6ECDCD2BFB20A60020644D /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F09CDB12C04616D000F6E49 /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
 		5F6ECDC62BFB20A50020644D /* officeStretches.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = officeStretches.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F6ECDC92BFB20A50020644D /* officeStretchesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = officeStretchesApp.swift; sourceTree = "<group>"; };
 		5F6ECDCB2BFB20A50020644D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			children = (
 				5F6ECDCB2BFB20A50020644D /* ContentView.swift */,
 				5F9628932C01C41B00C4DC98 /* MuscleExercisesList.swift */,
+				5F09CDB12C04616D000F6E49 /* ExerciseDetailView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				5F6ECDE32BFB3E4C0020644D /* TitleRow.swift in Sources */,
 				5FAA3C962BFD3E0E00D4297F /* URLSession.swift in Sources */,
 				5F6ECDCC2BFB20A50020644D /* ContentView.swift in Sources */,
+				5F09CDB22C04616D000F6E49 /* ExerciseDetailView.swift in Sources */,
 				5F6ECDDD2BFB35560020644D /* ProfileCell.swift in Sources */,
 				5F9628982C01D88D00C4DC98 /* ExerciseListRow.swift in Sources */,
 				5FAA3C9A2BFD427C00D4297F /* URL.swift in Sources */,
