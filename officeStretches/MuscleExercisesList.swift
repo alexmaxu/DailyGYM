@@ -9,16 +9,9 @@ import SwiftUI
 
 struct MuscleExercisesList: View {
     
-//    var muscle: Muscles
-//    
-//    @ObservedObject var vm = MuscleExerviseVM(muscleTag: muscle)
-//
     
-    @ObservedObject var vm : MuscleExerciseVM
+    @ObservedObject var vm: MuscleExerciseListVM
     
-    init(vm: MuscleExerciseVM) {
-        self.vm = vm
-    }
     
     var body: some View {
         ScrollView {
@@ -32,9 +25,12 @@ struct MuscleExercisesList: View {
             }
         }
         .searchable(text: $vm.searchText, prompt: "Search")
+        .background(
+            LinearGradient(gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(0.5)]), startPoint: .top, endPoint: .bottom)
+        )
     }
 }
 
 #Preview {
-    MuscleExercisesList(vm: MuscleExerciseVM(exerciseInteractor: PreviewExerciseInteractor(), muscleTag: .Biceps))
+    MuscleExercisesList(vm: MuscleExerciseListVM(exerciseInteractor: PreviewExerciseInteractor(), muscleTag: .Biceps))
 }

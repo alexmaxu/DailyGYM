@@ -6,12 +6,12 @@
 //
 
 import Foundation
-final class MuscleExerciseVM: ObservableObject {
+final class MuscleExerciseListVM: ObservableObject {
     
     let exerciseInteractor: ExerciseInteractorProtocol
     
     @Published var muscleExercises: [Exercise] = []
-    @Published var searchText: String = ""
+    @Published var searchText: String = "" 
     
     var muscleTag: Muscles
     

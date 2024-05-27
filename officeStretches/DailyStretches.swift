@@ -15,8 +15,6 @@ struct DailyStretches: View {
             Text(title)
                 .font(.title)
                 .bold()
-                
-            
             Image(image)
                 .resizable()
                 .scaledToFit()

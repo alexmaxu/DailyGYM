@@ -33,11 +33,22 @@ struct ExerciseDetailView: View {
                     Text("Equipment: \(exercise.equipment ?? "No equipment required")")
                         .font(.footnote)
                 }
-                .padding(.vertical)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
+                .background(Color(.gray).opacity(0.1))
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+                
+                
                 Text(exercise.explaination)
-                Image(.barbellCurlPng)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical)
+                    .background(Color(.gray).opacity(0.1))
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                Image(exercise.muscles.rawValue)
                     .resizable()
                     .scaledToFit()
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: 10)
                     .padding()
                 VStack (alignment: .center) {
                     Button(action: {
@@ -45,11 +56,15 @@ struct ExerciseDetailView: View {
                     }, label: {
                         Text("Video")
                     })
+                    .clipShape(Capsule())
                 }
-                .padding()
+                .padding(.bottom)
                 .frame(maxWidth: .infinity)
                 
                 Text(exercise.longExplanation)
+                    .padding()
+                    .background(Color(.gray).opacity(0.2))
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
             }
             .padding(.horizontal)
             .sheet(isPresented: $showSheet){
@@ -57,7 +72,11 @@ struct ExerciseDetailView: View {
                     .ignoresSafeArea()
                     .presentationDetents([.large])
             }
+            
         }
+        .background(
+            LinearGradient(gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(0.5)]), startPoint: .top, endPoint: .bottom)
+        )
     }
 }
 
