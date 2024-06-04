@@ -10,6 +10,8 @@ import Foundation
 final class ProfileVM: ObservableObject{
     @Published var profile = Profile()
     
+    var setsLvl = CaseSets.intermediate
+    
     init(profile: Profile = Profile()) {
         self.profile = profile
     }

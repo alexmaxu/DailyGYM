@@ -10,7 +10,7 @@ import SwiftUI
 struct ExerciseListRow: View {
     let exercise: Exercise
     var body: some View {
-        TitleRow(title: exercise.workOut)
+        TitleRow(title: exercise.workOut, gradientOpacity: 0.7)
     }
 }
 

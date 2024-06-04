@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct MyStretches: View {
-    let arrayStretches: [String] = ["My Morning Routine", "My Neck stretch"]
+    let arrayStretches: [MyExerciseModel]
     var body: some View {
         TabView {
-            ForEach(arrayStretches, id:\.self) { stretch in
-                MyStretchesCard(image: .ejercise1, title: stretch)
+            ForEach(arrayStretches, id:\.self) { myExercise in
+                NavigationLink(value: myExercise) {
+                    MyStretchesCard(image: .ejercise1, title: myExercise.title)
+                }
             }
         }
         .tabViewStyle(PageTabViewStyle())
@@ -21,5 +23,5 @@ struct MyStretches: View {
 }
 
 #Preview {
-    MyStretches()
+    MyStretches(arrayStretches: [MyExerciseModel(title: "Preview My Exercise Routine", routine: Exercise.previewExercisesList)])
 }

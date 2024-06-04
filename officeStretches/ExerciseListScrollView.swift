@@ -15,7 +15,6 @@ struct ExerciseListScrollView: View {
                     NavigationLink(value: muscle) {
                         VStack {
                             Text(muscle.rawValue)
-                                
                                 .bold()
                                 .foregroundStyle(.black)
                             Image(muscle.rawValue)

@@ -9,16 +9,16 @@ import SwiftUI
 
 struct ProfileCell: View {
     
-    var profile: Profile
+    @Binding var profile: Profile
     
     var body: some View {
         NavigationLink (value: profile) {
             HStack {
-                VStack {
-                    Text("Alex")
+                VStack(alignment: .leading) {
+                    Text(profile.name)
                         .font(.headline)
                         .foregroundStyle(Color.black)
-                    Text("LVL: 1")
+                    Text("LVL: \(profile.lvl)")
                         .font(.footnote)
                         .foregroundStyle(Color.black)
                 }
@@ -32,7 +32,13 @@ struct ProfileCell: View {
                 
             }
             .frame(height: 70)
-            .background(.cyan.opacity(0.2))
+            .background(
+                LinearGradient(
+                    gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(0.4)]),
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+            )
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .padding(.horizontal)
         }
@@ -41,5 +47,5 @@ struct ProfileCell: View {
 }
 
 #Preview {
-    ProfileCell(profile: .previewProfile)
+    ProfileCell(profile: .constant(Profile()))
 }

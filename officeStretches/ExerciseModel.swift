@@ -33,6 +33,13 @@ struct Exercise: Codable, Identifiable, Hashable{
     }
 }
 
+enum CaseSets: String, CaseIterable, Identifiable {
+    var id: Self { self }
+    case beginner = "3 Sets with 12 to 15 reps"
+    case intermediate = "4 Sets with 8 to 12 reps"
+    case expert = "5 Sets with 3 to 10 reps"
+}
+
 enum BeginnerSets: String, Codable {
     case the3SetsWith12To15Reps = "3 Sets with 12 to 15 reps"
 }

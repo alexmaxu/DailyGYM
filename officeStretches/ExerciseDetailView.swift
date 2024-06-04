@@ -55,6 +55,17 @@ struct ExerciseDetailView: View {
                         showSheet.toggle()
                     }, label: {
                         Text("Video")
+                            .font(.headline)
+                            .bold()
+                            .tint(.black)
+                            .frame(width: 90, height: 40)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(0.7)]),
+                                    startPoint: .top,
+                                    endPoint: .bottom
+                                )
+                            )
                     })
                     .clipShape(Capsule())
                 }
@@ -84,13 +95,4 @@ struct ExerciseDetailView: View {
     ExerciseDetailView(exercise: .previewExercise)
 }
 
-struct YouTubeView: UIViewRepresentable {
-    let YTUrl: String
-    func makeUIView(context: Context) ->  WKWebView {
-        return WKWebView()
-    }
-    func updateUIView(_ uiView: WKWebView, context: Context) {
-        guard let demoURL = URL(string: YTUrl) else { return }
-        uiView.load(URLRequest(url: demoURL))
-    }
-}
+

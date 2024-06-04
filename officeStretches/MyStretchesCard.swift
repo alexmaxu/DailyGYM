@@ -16,6 +16,7 @@ struct MyStretchesCard: View {
                 Text(title)
                     .font(.headline)
                     .bold()
+                    .tint(.black)
                     .padding(.bottom, 24)
                     .frame(maxWidth: .infinity)
                     .frame(height: 90)
@@ -23,7 +24,13 @@ struct MyStretchesCard: View {
             
         }
         
-        .background(.cyan.opacity(0.3))
+        .background(
+            LinearGradient(
+                gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(0.7)]),
+                startPoint: .top,
+                endPoint: .bottom
+            )
+        )
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .padding(.horizontal)
             

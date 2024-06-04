@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TitleRow: View {
     let title: String
+    let gradientOpacity: Double
     var body: some View {
         VStack {
             Text(title)
@@ -17,12 +18,18 @@ struct TitleRow: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: 50)
-        .background(.cyan.opacity(0.3))
+        .background(
+            LinearGradient(
+                gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(gradientOpacity)]),
+                startPoint: .top,
+                endPoint: .bottom
+            )
+        )
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .padding(.horizontal)
     }
 }
 
 #Preview {
-    TitleRow(title: "Title")
+    TitleRow(title: "Title", gradientOpacity: 0.4)
 }

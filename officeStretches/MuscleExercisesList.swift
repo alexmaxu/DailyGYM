@@ -9,16 +9,14 @@ import SwiftUI
 
 struct MuscleExercisesList: View {
     
-    
     @ObservedObject var vm: MuscleExerciseListVM
-    
-    
+
     var body: some View {
         ScrollView {
             VStack {
                 ForEach(vm.muscleExercises) { exercise in
                     NavigationLink(value: exercise ) {
-                        TitleRow(title: exercise.workOut)
+                        TitleRow(title: exercise.workOut, gradientOpacity: 0.5)
                             .foregroundStyle(.black)
                     }
                 }
