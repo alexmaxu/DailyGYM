@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct officeStretchesApp: App {
+ struct officeStretchesApp: App {
     @StateObject var profileViewModel = ProfileVM()
     
     var body: some Scene {

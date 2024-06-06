@@ -9,5 +9,6 @@ import Foundation
 
 struct MyExerciseModel: Hashable {
     var title: String
+    var description: String?
     var routine: [Exercise]
 }

@@ -112,7 +112,12 @@ struct DailyRoutineExercise: View {
                                         )
                                     )
                                     .clipShape(RoundedRectangle(cornerRadius: 10))
-                                    .opacity(setArray[index] ? 1.0 : 0.2)
+                                    .opacity(setArray[index] ? 1.0 : 0.3)
+                                    .overlay {
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .stroke(lineWidth: 3)
+                                            .fill(.cyan.opacity(1))
+                                    }
                             }
                         }
                         

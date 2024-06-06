@@ -86,10 +86,21 @@ extension Exercise {
 }
 
 extension MyExerciseModel {
-    static let previewMyExerciseModel: [MyExerciseModel] = [
+    static let previewMyExerciseList: [MyExerciseModel] = [
         MyExerciseModel(
             title: "Preview Warm Up routine",
             routine: [Exercise(
+                muscles: .WarmUp,
+                workOut: "Jumping Jacks",
+                intensityLevel: .expert,
+                beginnerSets: .the3SetsWith12To15Reps,
+                intermediateSets: .the4SetsWith8To12Reps,
+                expertSets: .the5SetsWith3To10Reps,
+                equipment: nil,
+                explaination: "Jumping Jacks: A full-body movement that increases your heart rate and warms up your muscles.",
+                longExplanation: "The Jumping Jacks is a weight training exercise targeting the Warm Up. It involves using nan, focusing on the form and technique to effectively engage the muscles. Ideal for strength building and muscle definition, it's important to maintain controlled movements throughout.",
+                video: "https://www.youtube.com/results?search_query=Jumping+Jacks"
+            ), .previewExercise, Exercise(
                 muscles: .WarmUp,
                 workOut: "Jumping Jacks",
                 intensityLevel: .expert,
@@ -104,18 +115,7 @@ extension MyExerciseModel {
         ),
         MyExerciseModel(
             title: "PRVW Warm Up routine",
-            routine: [Exercise(
-                muscles: .WarmUp,
-                workOut: "Jumping Jacks",
-                intensityLevel: .expert,
-                beginnerSets: .the3SetsWith12To15Reps,
-                intermediateSets: .the4SetsWith8To12Reps,
-                expertSets: .the5SetsWith3To10Reps,
-                equipment: nil,
-                explaination: "Jumping Jacks: A full-body movement that increases your heart rate and warms up your muscles.",
-                longExplanation: "The Jumping Jacks is a weight training exercise targeting the Warm Up. It involves using nan, focusing on the form and technique to effectively engage the muscles. Ideal for strength building and muscle definition, it's important to maintain controlled movements throughout.",
-                video: "https://www.youtube.com/results?search_query=Jumping+Jacks"
-            )]
+            routine: Exercise.previewExercisesList
         ),
         MyExerciseModel(
             title: "Preview 3 Warm Up routine",

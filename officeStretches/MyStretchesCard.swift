@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MyStretchesCard: View {
-    let image: ImageResource
     let title: String
     var body: some View {
         HStack {
@@ -21,7 +20,6 @@ struct MyStretchesCard: View {
                     .frame(maxWidth: .infinity)
                     .frame(height: 90)
             }
-            
         }
         
         .background(
@@ -38,5 +36,5 @@ struct MyStretchesCard: View {
 }
 
 #Preview {
-    MyStretchesCard(image: .ejercise1, title: "Morning Routine")
+    MyStretchesCard(title: "Morning Routine")
 }

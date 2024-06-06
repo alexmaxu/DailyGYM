@@ -7,30 +7,34 @@
 
 import SwiftUI
 
-struct DailyRoutineView: View {
+struct ExerciseRoutine: View {
     @Environment(\.dismiss) var dismiss
     @State var selectedTabIndex = 0
     @State var showSheet = false
     @State var showSheetVideo = false
     
-    let dailyRoutineExercises: [Exercise]
+    let routineExercises: [Exercise]
     let exerciseLvl: CaseSets
+    
+    let title: String
+    let description: String
+    let titleList: String
     
     var body: some View {
         TabView (selection: $selectedTabIndex) {
             VStack {
-                Text("Daily Routine")
+                Text(title)
                     .font(.title)
                     .bold()
-                Text("Stay motivated and fit with our daily updated exercise routines. Each day, discover new workouts designed to challenge and energize you, tailored for all fitness levels. Never get bored with your fitness journey. Fresh sets of exercises awaits you every morning!")
+                Text(description)
                     .font(.subheadline)
                     .padding([.horizontal, .bottom])
-                Text("Today's routine")
+                Text(titleList)
                     .bold()
-                Text("30 minutes aproximately")
+                Text("\(routineExercises.count * 10) minutes aproximately")
                     .font(.footnote)
                 ScrollView {
-                    ForEach(dailyRoutineExercises) { exercise in
+                    ForEach(routineExercises) { exercise in
                         NavigationLink(value: exercise) {
                             HStack {
                                 Spacer()
@@ -61,7 +65,7 @@ struct DailyRoutineView: View {
                     }
                 }
                 Button(action: {
-                    if selectedTabIndex < dailyRoutineExercises.count {
+                    if selectedTabIndex < routineExercises.count {
                         selectedTabIndex += 1
                     }
                 }, label: {
@@ -89,9 +93,9 @@ struct DailyRoutineView: View {
                 Spacer(minLength: 50)
             }
             .tag(0)
-            ForEach(dailyRoutineExercises.indices, id: \.self) { index in
-                let exercise = dailyRoutineExercises[index]
-                DailyRoutineExercise(dailyRoutineExercises: dailyRoutineExercises, exercise: exercise, exerciseLvl: exerciseLvl, selectedTabIndex: $selectedTabIndex, showSheetVideo: $showSheetVideo, showSheet: $showSheet)
+            ForEach(routineExercises.indices, id: \.self) { index in
+                let exercise = routineExercises[index]
+                DailyRoutineExercise(dailyRoutineExercises: routineExercises, exercise: exercise, exerciseLvl: exerciseLvl, selectedTabIndex: $selectedTabIndex, showSheetVideo: $showSheetVideo, showSheet: $showSheet)
                     .tag(index + 1)
                     .padding()
                     .sheet(isPresented: $showSheetVideo, content: {
@@ -154,6 +158,6 @@ struct DailyRoutineView: View {
 
 #Preview {
     NavigationStack {
-        DailyRoutineView(dailyRoutineExercises: Exercise.previewExercisesList, exerciseLvl: .intermediate)
+        ExerciseRoutine(routineExercises: Exercise.previewExercisesList, exerciseLvl: .intermediate, title: "Daily Routine", description: "Stay motivated and fit with our daily updated exercise routines. Each day, discover new workouts designed to challenge and energize you, tailored for all fitness levels. Never get bored with your fitness journey. Fresh sets of exercises awaits you every morning!", titleList: "Today's routine")
     }
 }

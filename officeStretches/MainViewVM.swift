@@ -13,7 +13,7 @@ final class MainViewVM: ObservableObject {
     
     @Published var exercises: [Exercise] = []
     @Published var dailyRoutine: [Exercise] = []
-    @Published var myExercises: [MyExerciseModel] = MyExerciseModel.previewMyExerciseModel
+    @Published var myExercises: [MyExerciseModel] = MyExerciseModel.previewMyExerciseList
     
     var muscleTofind: Muscles = .All
     
