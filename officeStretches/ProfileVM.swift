@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ProfileVM: ObservableObject{
+final class ProfileVM: ObservableObject {
     @Published var profile = Profile()
     
     var setsLvl = CaseSets.intermediate

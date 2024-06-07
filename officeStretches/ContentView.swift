@@ -9,10 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var profileVM: ProfileVM
-    @ObservedObject var vm = MainViewVM()
-    @ObservedObject var MyVM = MyExerciseListToSave()
+    @EnvironmentObject var vm: MainViewVM
     
-    @State var isPickMode: ListToPickExercise = .noPick
+    @State var showCreateRoutine: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -21,13 +20,10 @@ struct ContentView: View {
                 Spacer()
                 DailyRoutineCard(dailyRoutine: vm.dailyRoutine)
                 Spacer()
-                ExerciseListScrollView(orientation: .horizontal, isPickMode: $isPickMode)
+                ExerciseListScrollView()
                 Spacer()
-                MyStretches(arrayStretches: vm.myExercises)
+                MyStretches(arrayStretches: vm.myExercises, showCreateRoutine: $showCreateRoutine)
                 TitleRow(title: "History", gradientOpacity: 0.7)
-            }
-            .onAppear {
-                isPickMode = .noPick
             }
             .navigationDestination(for: Profile.self, destination: { profile in
                 ProfileSettingsView()
@@ -36,13 +32,7 @@ struct ContentView: View {
                 ExerciseRoutine(routineExercises: vm.dailyRoutine, exerciseLvl: profileVM.profile.levelSets, title: "Daily Routine", description: "Stay motivated and fit with our daily updated exercise routines. Each day, discover new workouts designed to challenge and energize you, tailored for all fitness levels. Never get bored with your fitness journey. Fresh sets of exercises awaits you every morning!", titleList: "Today's routine")
             })
             .navigationDestination(for: Muscles.self, destination: { muscle in
-                switch isPickMode {
-                case .yesPick:
-                    MuscleExercisesList(vm: MuscleExerciseListVM(muscleTag: muscle), MyVM: MyVM, isPickMode: .yesPick)
-                case .noPick:
-                    MuscleExercisesList(vm: MuscleExerciseListVM(muscleTag: muscle), MyVM: MyVM, isPickMode: .noPick)
-                }
-                
+                    MuscleExercisesList(muscleExerciseListVM: MuscleExerciseListVM(muscleTag: muscle), isPickMode: .noPick)
             })
             .navigationDestination(for: Exercise.self, destination: { exercise in
                 ExerciseDetailView(exercise: exercise)
@@ -50,10 +40,9 @@ struct ContentView: View {
             .navigationDestination(for: MyExerciseModel.self, destination: { myExercise in
                 ExerciseRoutine(routineExercises: myExercise.routine, exerciseLvl: profileVM.profile.levelSets, title: myExercise.title, description: myExercise.description ?? "", titleList: myExercise.title + "'s routine")
             })
-            .navigationDestination(for: SrcrollOrientation.self, destination: { orientation in
-                ExerciseListScrollView(orientation: orientation, isPickMode: $isPickMode)
+            .navigationDestination(isPresented: $showCreateRoutine, destination: {
+                CreateYourRoutineView()
             })
-            
             .background(
                 LinearGradient(
                     gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(0.5)]),
@@ -66,6 +55,7 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(vm: MainViewVM(exerciseInteractor: PreviewExerciseInteractor()))
+    ContentView()
         .environmentObject(ProfileVM())
+        .environmentObject(MainViewVM(exerciseInteractor: PreviewExerciseInteractor()))
 }

@@ -15,6 +15,8 @@ final class MainViewVM: ObservableObject {
     @Published var dailyRoutine: [Exercise] = []
     @Published var myExercises: [MyExerciseModel] = MyExerciseModel.previewMyExerciseList
     
+    @Published var myExervisListToSave: [Exercise] = Exercise.previewExercisesList
+    
     var muscleTofind: Muscles = .All
     
     init(exerciseInteractor: ExerciseInteractorProtocol = ExerciseInteractor.shared ) {

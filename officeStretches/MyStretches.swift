@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MyStretches: View {
     let arrayStretches: [MyExerciseModel]
-
+    @Binding var showCreateRoutine: Bool
     var body: some View {
         TabView {
             ForEach(arrayStretches, id:\.self) { myExercise in
@@ -17,9 +17,10 @@ struct MyStretches: View {
                     MyStretchesCard(title: myExercise.title)
                 }
             }
-            NavigationLink(value: SrcrollOrientation.vertical ) {
-                MyStretchesCard(title: "Add new +")
-            }
+            MyStretchesCard(title: "Add new +")
+                .onTapGesture {
+                    showCreateRoutine.toggle()
+                }
         }
         .tabViewStyle(PageTabViewStyle())
         .frame(height: 90)
@@ -28,6 +29,6 @@ struct MyStretches: View {
 
 #Preview {
     NavigationStack {
-        MyStretches(arrayStretches: [MyExerciseModel(title: "Preview My Exercise Routine", routine: Exercise.previewExercisesList)])
+        MyStretches(arrayStretches: [MyExerciseModel(title: "Preview My Exercise Routine", routine: Exercise.previewExercisesList)], showCreateRoutine: .constant(false))
     }
 }
