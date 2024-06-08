@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CreateYourRoutineView: View {
     @EnvironmentObject var vm: MainViewVM
-    @ObservedObject var muscleExerciseListVM = MuscleExerciseListVM(muscleTag: .All)
+    @ObservedObject var muscleExerciseListVM = MuscleExerciseListVM(muscleTag: .Biceps)
     @State var muscle: Muscles = .All
     
     var body: some View {
@@ -22,9 +22,15 @@ struct CreateYourRoutineView: View {
                 VStack {
                     ForEach(Muscles.allCases.dropLast()) { muscle in
                         DisclosureGroup {
-                            Text("hola")
-                            Text("hasta leugo")
-                            Text("adios")
+                            ForEach(muscleExerciseListVM.exerciseDictionary[muscle] ?? []) { exercise in
+                                HStack {
+                                    Text(exercise.workOut)
+                                    Image(exercise.muscles.rawValue)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 100)
+                                }
+                            }
                         } label: {
                             Text(muscle.rawValue)
                                 .bold()
@@ -41,6 +47,7 @@ struct CreateYourRoutineView: View {
                                 .clipShape(RoundedRectangle(cornerRadius: 20))
                         }
                         .padding(.horizontal)
+                        
                     }
                 }
                 .frame(maxWidth: .infinity)

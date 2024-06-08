@@ -14,16 +14,19 @@ final class MuscleExerciseListVM: ObservableObject {
     @Published var myExervisListToSave: [Exercise] = []
     @Published var searchText: String = ""
     
-    
-    @Published var muscleTag: Muscles
-    
+    var muscleTag: Muscles
+    var exerciseDictionary: [Muscles:[Exercise]] = [:]
     
     init(exerciseInteractor: ExerciseInteractorProtocol = ExerciseInteractor.shared, muscleTag: Muscles) {
         self.exerciseInteractor = exerciseInteractor
         self.muscleTag = muscleTag
         Task {
             await getMuscleExerciseList()
+            for muscle in Muscles.allCases.dropLast() {
+                await getMuscleExerciseListWithMuscle(muscle: muscle)
+            }
         }
+        
     }
     
     func getMuscleExerciseList() async {
@@ -40,8 +43,10 @@ final class MuscleExerciseListVM: ObservableObject {
     func getMuscleExerciseListWithMuscle(muscle: Muscles) async {
         do {
             let exerciseListResult = try await exerciseInteractor.fetchExercises(muscle: muscle)
+            
             await MainActor.run {
-                self.muscleExercises = exerciseListResult
+                exerciseDictionary[muscle] = exerciseListResult
+                print(muscle.rawValue)
             }
         } catch {
             print(error)
