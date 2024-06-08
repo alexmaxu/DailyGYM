@@ -8,6 +8,10 @@
 import Foundation
 
 struct PreviewExerciseInteractor: ExerciseInteractorProtocol {
+    func fetchAllExercises() async throws -> [Exercise] {
+        []
+    }
+    
     func fetchExercises(muscle: Muscles) async throws -> [Exercise] {
         let url = Bundle.main.url(forResource: "ExerciseList", withExtension: "json")!
         let data = try Data(contentsOf: url)

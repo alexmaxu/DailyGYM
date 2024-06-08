@@ -25,10 +25,16 @@ struct CreateYourRoutineView: View {
                             ForEach(muscleExerciseListVM.exerciseDictionary[muscle] ?? []) { exercise in
                                 HStack {
                                     Text(exercise.workOut)
+                                    Spacer()
                                     Image(exercise.muscles.rawValue)
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width: 100)
+                                    Button {
+                                        vm.myExervisListToSave.append(exercise)
+                                    } label: {
+                                        Text("Add")
+                                    }
                                 }
                             }
                         } label: {
