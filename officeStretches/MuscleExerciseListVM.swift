@@ -18,12 +18,13 @@ final class MuscleExerciseListVM: ObservableObject {
     var muscleTag: Muscles
     var exerciseDictionary: [Muscles:[Exercise]] = [:]
     
-    init(exerciseInteractor: ExerciseInteractorProtocol = ExerciseInteractor.shared, muscleTag: Muscles) {
+    init(exerciseInteractor: ExerciseInteractorProtocol = ExerciseInteractor.shared, muscleTag: Muscles = .Abs) {
         self.exerciseInteractor = exerciseInteractor
         self.muscleTag = muscleTag
         Task {
             await getMuscleExerciseList()
             await getAllExercises()
+            print("init")
             for exercise in allExercises {
                 if exerciseDictionary[exercise.muscles] == nil {
                     exerciseDictionary[exercise.muscles] = [exercise]
@@ -31,9 +32,7 @@ final class MuscleExerciseListVM: ObservableObject {
                     exerciseDictionary[exercise.muscles]?.append(exercise)
                 }
             }
-        }
-        
-        
+        } 
     }
     
     func getMuscleExerciseList() async {
@@ -50,7 +49,7 @@ final class MuscleExerciseListVM: ObservableObject {
     func getMuscleExerciseListWithMuscle(muscle: Muscles) async {
         do {
             let exerciseListResult = try await exerciseInteractor.fetchExercises(muscle: muscle)
-            
+            print("I got \(muscle.rawValue) exercises")
             await MainActor.run {
                 exerciseDictionary[muscle] = exerciseListResult
                 print(muscle.rawValue)
@@ -63,7 +62,7 @@ final class MuscleExerciseListVM: ObservableObject {
     func getAllExercises() async {
         do {
             let exerciseListResult = try await exerciseInteractor.fetchAllExercises()
-            print(exerciseListResult.count)
+            print("I got all exercises")
             await MainActor.run {
                 self.allExercises = exerciseListResult
             }

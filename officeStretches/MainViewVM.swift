@@ -15,7 +15,7 @@ final class MainViewVM: ObservableObject {
     @Published var dailyRoutine: [Exercise] = []
     @Published var myExercises: [MyExerciseModel] = MyExerciseModel.previewMyExerciseList
     
-    @Published var myExervisListToSave: [Exercise] = Exercise.previewExercisesList
+    @Published var myExervisListToSave: [Exercise] = []
     
     var muscleTofind: Muscles = .All
     

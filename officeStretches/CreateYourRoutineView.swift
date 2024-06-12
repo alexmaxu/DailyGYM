@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct CreateYourRoutineView: View {
+    @Environment(\.dismiss) var dismiss
     @EnvironmentObject var vm: MainViewVM
-    @ObservedObject var muscleExerciseListVM = MuscleExerciseListVM(muscleTag: .Biceps)
+    @ObservedObject var muscleExerciseListVM = MuscleExerciseListVM()
     @State var muscle: Muscles = .All
+    @State var titleRoutine: String = ""
     
     var body: some View {
         VStack {
-            Text("Your Routine")
-            ResumeExerciseRoutineList(routineExercises: vm.myExervisListToSave)
+            HStack {
+                Text("Your Routine:")
+                TextField("Title", text: $titleRoutine)
+                    .textFieldStyle(.roundedBorder)
+            }
+            .padding(.horizontal)
+            ResumeExerciseRoutineList(routineExercises: $muscleExerciseListVM.myExervisListToSave)
                 .frame(height: 200)
             Text("Exercise List")
             ScrollView {
@@ -31,7 +38,8 @@ struct CreateYourRoutineView: View {
                                         .scaledToFit()
                                         .frame(width: 100)
                                     Button {
-                                        vm.myExervisListToSave.append(exercise)
+                                        muscleExerciseListVM.myExervisListToSave.append(exercise)
+                                        print("le doy al botn")
                                     } label: {
                                         Text("Add")
                                     }
@@ -62,6 +70,16 @@ struct CreateYourRoutineView: View {
             .scrollTargetBehavior(.viewAligned)
             
         }
+        .toolbar {
+            ToolbarItem (placement: .automatic) {
+                Button {
+                    vm.myExercises.append(MyExerciseModel(title: titleRoutine, routine: muscleExerciseListVM.myExervisListToSave))
+                    dismiss()
+                } label: {
+                    Text("Add routine")
+                }
+            }
+        }
         .background(
             LinearGradient(
                 gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(0.5)]),
@@ -73,6 +91,8 @@ struct CreateYourRoutineView: View {
 }
 
 #Preview {
-    CreateYourRoutineView()
-        .environmentObject(MainViewVM(exerciseInteractor: PreviewExerciseInteractor()))
+    NavigationStack {
+        CreateYourRoutineView()
+            .environmentObject(MainViewVM(exerciseInteractor: PreviewExerciseInteractor()))
+    }
 }

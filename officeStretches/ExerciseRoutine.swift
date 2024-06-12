@@ -13,7 +13,7 @@ struct ExerciseRoutine: View {
     @State var showSheet = false
     @State var showSheetVideo = false
     
-    let routineExercises: [Exercise]
+    @State var routineExercises: [Exercise]
     let exerciseLvl: CaseSets
     
     let title: String
@@ -33,7 +33,7 @@ struct ExerciseRoutine: View {
                     .bold()
                 Text("\(routineExercises.count * 10) minutes aproximately")
                     .font(.footnote)
-                ResumeExerciseRoutineList(routineExercises: routineExercises)
+                ResumeExerciseRoutineList(routineExercises: $routineExercises)
                 Button(action: {
                     if selectedTabIndex < routineExercises.count {
                         selectedTabIndex += 1

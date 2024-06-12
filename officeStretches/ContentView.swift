@@ -43,6 +43,9 @@ struct ContentView: View {
             .navigationDestination(isPresented: $showCreateRoutine, destination: {
                 CreateYourRoutineView()
             })
+            .onAppear {
+                print("esoty aqui!contetn view")
+            }
             .background(
                 LinearGradient(
                     gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(0.5)]),

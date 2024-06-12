@@ -29,11 +29,15 @@ struct MuscleExercisesList: View {
             .background(
                 LinearGradient(gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(0.5)]), startPoint: .top, endPoint: .bottom)
             )
+            .onAppear {
+                print("lista de ejercisios")
+            }
         }
+        
     
 }
 
 #Preview {
     MuscleExercisesList(muscleExerciseListVM: MuscleExerciseListVM(exerciseInteractor: PreviewExerciseInteractor(), muscleTag: .Biceps), isPickMode: .yesPick)
-        .environmentObject(MainViewVM())
+        .environmentObject(MainViewVM(exerciseInteractor: PreviewExerciseInteractor()))
 }

@@ -9,7 +9,9 @@ import Foundation
 
 struct PreviewExerciseInteractor: ExerciseInteractorProtocol {
     func fetchAllExercises() async throws -> [Exercise] {
-        []
+        let url = Bundle.main.url(forResource: "ExerciseList", withExtension: "json")!
+        let data = try Data(contentsOf: url)
+        return try JSONDecoder().decode([Exercise].self, from: data)
     }
     
     func fetchExercises(muscle: Muscles) async throws -> [Exercise] {
@@ -24,7 +26,7 @@ extension Profile {
 }
 
 extension Exercise {
-    static let previewExercise = Exercise(
+    static let previewExercise: Exercise = Exercise(
         muscles: .Biceps,
         workOut: "Preview Barbell Curl",
         intensityLevel: .beginner,
@@ -37,7 +39,7 @@ extension Exercise {
         video: "https://www.youtube.com/results?search_query=Barbell+Curl"
     )
     
-    static let previewExercisesList = [
+    static let previewExercisesList: [Exercise] = [
         Exercise(
             muscles: .Biceps,
             workOut: "Preview Barbell Curl",
@@ -161,4 +163,20 @@ extension MyExerciseModel {
             )]
         )
     ]
+}
+
+struct ExerciseInteractorProtocolPreview: ExerciseInteractorProtocol {
+    func fetchExercises(muscle: Muscles) async throws -> [Exercise] {
+        let url = Bundle.main.url(forResource: "ExerciseList", withExtension: "json")!
+        let data = try Data(contentsOf: url)
+        return try JSONDecoder().decode([Exercise].self, from: data)
+    }
+    
+    func fetchAllExercises() async throws -> [Exercise] {
+        let url = Bundle.main.url(forResource: "ExerciseList", withExtension: "json")!
+        let data = try Data(contentsOf: url)
+        return try JSONDecoder().decode([Exercise].self, from: data)
+    }
+    
+    
 }
