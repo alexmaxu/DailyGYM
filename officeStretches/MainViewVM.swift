@@ -27,6 +27,10 @@ final class MainViewVM: ObservableObject {
         }
     }
     
+    func addToMyExercises(titleRoutine: String, routine: [Exercise]) {
+        myExercises.append(MyExerciseModel(title: titleRoutine, routine: routine))
+    }
+    
     func getExercises() async {
         do {
             let exercisesResults = try await exerciseInteractor.fetchExercises(muscle: muscleTofind)

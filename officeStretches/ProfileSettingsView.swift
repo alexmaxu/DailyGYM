@@ -8,27 +8,28 @@
 import SwiftUI
 
 struct ProfileSettingsView: View {
-    @EnvironmentObject var vm: ProfileVM
+    @EnvironmentObject var vmProfile: ProfileVM
+    
     var body: some View {
         VStack (alignment: .leading) {
             VStack {
-                Image(vm.profile.image.rawValue)
+                Image(vmProfile.profile.image.rawValue)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 80)
                     .frame(maxWidth: .infinity, alignment: .center)
-                Picker("Choose a picture", selection: $vm.profile.image) {
+                Picker("Choose a picture", selection: $vmProfile.profile.image) {
                     ForEach(ProfileImage.allCases) { image in
                         Text(image.rawValue)
                     }
                 }
             }
             Text("Name:")
-            TextField("Name", text: $vm.profile.name)
+            TextField("Name", text: $vmProfile.profile.name)
                 .textFieldStyle(.roundedBorder)
             HStack {
                 Text("Level Sets:")
-                Picker("Choose a picture", selection: $vm.profile.levelSets) {
+                Picker("Choose a picture", selection: $vmProfile.profile.levelSets) {
                     ForEach(CaseSets.allCases) { levelSets in
                         switch levelSets {
                         case .beginner: Text("Beginner")
@@ -38,30 +39,27 @@ struct ProfileSettingsView: View {
                     }
                 }
             }
-            Text("LEVEL: \(vm.profile.lvl)")
+            Text("LEVEL: \(vmProfile.profile.lvl)")
             HStack {
                 Button(action: {
-                    vm.profile.lvl += 1
+                    vmProfile.profile.lvl += 1
                 }, label: {
                     Image(systemName: "plus.circle")
                         .font(.largeTitle)
                 })
                 .padding(.trailing)
                 Button(action: {
-                    vm.profile.lvl -= 1
+                    vmProfile.profile.lvl -= 1
                 }, label: {
                     Image(systemName: "minus.circle")
                         .font(.largeTitle)
                 })
             }
-            
             .padding()
             Spacer()
         }
         .padding()
-        .background(
-            LinearGradient(gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(0.5)]), startPoint: .top, endPoint: .bottom)
-        )
+        .gradientBackground(opacity1: 0.1, opacity2: 0.5)
     }
 }
 

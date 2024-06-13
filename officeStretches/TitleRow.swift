@@ -18,13 +18,7 @@ struct TitleRow: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: 50)
-        .background(
-            LinearGradient(
-                gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(gradientOpacity)]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
-        )
+        .gradientBackground(opacity1: 0.1, opacity2: gradientOpacity)
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .padding(.horizontal)
     }

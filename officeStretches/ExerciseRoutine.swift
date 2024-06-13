@@ -12,10 +12,9 @@ struct ExerciseRoutine: View {
     @State var selectedTabIndex = 0
     @State var showSheet = false
     @State var showSheetVideo = false
-    
     @State var routineExercises: [Exercise]
-    let exerciseLvl: CaseSets
     
+    let exerciseLvl: CaseSets
     let title: String
     let description: String
     let titleList: String
@@ -45,13 +44,7 @@ struct ExerciseRoutine: View {
                         .padding()
                         .frame(maxWidth: .infinity)
                         .frame(height: 50)
-                        .background(
-                            LinearGradient(
-                                gradient: Gradient(colors: [Color.cyan.opacity(0), Color.cyan.opacity(0.7)]),
-                                startPoint: .top,
-                                endPoint: .bottom
-                            )
-                        )
+                        .gradientBackground(opacity1: 0.0, opacity2: 0.7)
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                         .overlay {
                             RoundedRectangle(cornerRadius: 20)
@@ -76,53 +69,12 @@ struct ExerciseRoutine: View {
             }
         }
         .sheet(isPresented: $showSheet) {
-            ZStack {
-                LinearGradient(gradient: Gradient(colors: [Color.cyan.opacity(0), Color.cyan.opacity(0.5)]), startPoint: .top, endPoint: .bottom)
-                    .ignoresSafeArea()
-                VStack (alignment: .center) {
-                    Spacer()
-                    Image(systemName: "hand.thumbsup.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 120, height: 120)
-                        .foregroundColor(.yellow)
-                    
-                    Text("Congrats!")
-                        .font(.title)
-                        .bold()
-                    Text("Fantastic job completing today's workout! See you tomorrow for another Daily Routine. Keep up the great work, and remember to eat well and rest!")
-                        .multilineTextAlignment(.center)
-                        .font(.title3)
-                        .padding()
-                    Spacer()
-                    Button(action: {
-                        dismiss()
-                    }, label: {
-                        Text("See you tomorrow!")
-                            .font(.headline)
-                            .tint(.black)
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 50)
-                            .background(
-                                LinearGradient(
-                                    gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(0.4)]),
-                                    startPoint: .top,
-                                    endPoint: .bottom
-                                )
-                            )
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
-                            .padding(.horizontal)
-                    })
-                    .padding(.bottom, 36)
-                }
-            }
+            CongratsView(dismiss: _dismiss)
+            // Como puedo pasar el dismis de ExerciseRoutine al congrats? para que sirve el "_"
         }
         .tabViewStyle(.page)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(
-            LinearGradient(gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(0.5)]), startPoint: .top, endPoint: .bottom)
-        )
+        .gradientBackground(opacity1: 0.1, opacity2: 0.5)
     }
 }
 

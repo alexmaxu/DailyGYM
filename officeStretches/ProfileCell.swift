@@ -32,13 +32,7 @@ struct ProfileCell: View {
                 
             }
             .frame(height: 70)
-            .background(
-                LinearGradient(
-                    gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(0.4)]),
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-            )
+            .gradientBackground(opacity1: 0.1, opacity2: 0.4)
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .padding(.horizontal)
         }

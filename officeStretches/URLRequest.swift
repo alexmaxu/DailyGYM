@@ -17,8 +17,14 @@ extension URLRequest {
 //        ]
         
 //        CUENTA DE ALEXHHANWAYY
+//        let headers = [
+//            "x-rapidapi-key": "95f8c2d9a5msh6d6d7f8611525b5p10c0acjsndafb5bd3ba67",
+//            "x-rapidapi-host": "work-out-api1.p.rapidapi.com"
+//        ]
+        
+//        CUENTA ZHENG MIN
         let headers = [
-            "x-rapidapi-key": "95f8c2d9a5msh6d6d7f8611525b5p10c0acjsndafb5bd3ba67",
+            "x-rapidapi-key": "e186cc835bmsha34927f3f8a2bcap1cc6f2jsn1a6b16c227d5",
             "x-rapidapi-host": "work-out-api1.p.rapidapi.com"
         ]
         
@@ -30,15 +36,21 @@ extension URLRequest {
     
     static func getAllExercisesURL(url:URL) async throws -> URLRequest {
         var request = URLRequest(url: url)
-        //        CUENTA DE ALEXMAXU
-        //        let headers = [
-        //            "X-RapidAPI-Key": "6313d80101mshcf7534d37d3d405p171bf2jsn2509c89a5d1d",
-        //            "X-RapidAPI-Host": "work-out-api1.p.rapidapi.com"
-        //        ]
+//      CUENTA DE ALEXMAXU
+//      let headers = [
+//          "X-RapidAPI-Key": "6313d80101mshcf7534d37d3d405p171bf2jsn2509c89a5d1d",
+//          "X-RapidAPI-Host": "work-out-api1.p.rapidapi.com"
+//      ]
         
-        //        CUENTA DE ALEXHHANWAYY
+//      CUENTA DE ALEXHHANWAYY
+//      let headers = [
+//          "x-rapidapi-key": "95f8c2d9a5msh6d6d7f8611525b5p10c0acjsndafb5bd3ba67",
+//          "x-rapidapi-host": "work-out-api1.p.rapidapi.com"
+//      ]
+        
+//        CUENTA ZHENG MIN
         let headers = [
-            "x-rapidapi-key": "95f8c2d9a5msh6d6d7f8611525b5p10c0acjsndafb5bd3ba67",
+            "x-rapidapi-key": "e186cc835bmsha34927f3f8a2bcap1cc6f2jsn1a6b16c227d5",
             "x-rapidapi-host": "work-out-api1.p.rapidapi.com"
         ]
         

@@ -32,100 +32,7 @@ struct DailyRoutineExercise: View {
                 .padding()
             Text(exercise.explaination)
                 .padding(.bottom)
-            switch exerciseLvl {
-            case .beginner:
-                Text(exercise.beginnerSets.rawValue)
-                VStack {
-                    HStack {
-                        ForEach(0..<3) { index in
-                            Button {
-                                setArray[index].toggle()
-                            } label: {
-                                Text("Set Done")
-                                    .font(.headline)
-                                    .bold()
-                                    .tint(.black)
-                                    .frame(width: 70, height: 60)
-                                    .background(
-                                        LinearGradient(
-                                            gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(0.7)]),
-                                            startPoint: .top,
-                                            endPoint: .bottom
-                                        )
-                                    )
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                                    .opacity(setArray[index] ? 1.0 : 0.2)
-                            }
-                        }
-                        
-                        
-                        
-                    }
-                }
-            case .intermediate:
-                Text(exercise.intermediateSets.rawValue)
-                VStack {
-                    HStack {
-                        ForEach(0..<4) { index in
-                            Button {
-                                setArray[index].toggle()
-                            } label: {
-                                Text("Set Done")
-                                    .font(.headline)
-                                    .bold()
-                                    .tint(.black)
-                                    .frame(width: 70, height: 60)
-                                    .background(
-                                        LinearGradient(
-                                            gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(0.7)]),
-                                            startPoint: .top,
-                                            endPoint: .bottom
-                                        )
-                                    )
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                                    .opacity(setArray[index] ? 1.0 : 0.2)
-                            }
-                        }
-                        
-                        
-                        
-                    }
-                }
-            case .expert:
-                Text(exercise.expertSets.rawValue)
-                VStack {
-                    HStack {
-                        ForEach(0..<5) { index in
-                            Button {
-                                setArray[index].toggle()
-                            } label: {
-                                Text("Set Done")
-                                    .font(.headline)
-                                    .bold()
-                                    .tint(.black)
-                                    .frame(width: 70, height: 60)
-                                    .background(
-                                        LinearGradient(
-                                            gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(0.7)]),
-                                            startPoint: .top,
-                                            endPoint: .bottom
-                                        )
-                                    )
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                                    .opacity(setArray[index] ? 1.0 : 0.3)
-                                    .overlay {
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .stroke(lineWidth: 3)
-                                            .fill(.cyan.opacity(1))
-                                    }
-                            }
-                        }
-                        
-                        
-                        
-                    }
-                }
-            }
+            SetDoneCount(setArray: $setArray, exerciseLvl: exerciseLvl, exercise: exercise)
             Spacer()
             Button(action: {
                 showSheetVideo.toggle()
@@ -135,13 +42,7 @@ struct DailyRoutineExercise: View {
                     .bold()
                     .tint(.black)
                     .frame(width: 90, height: 40)
-                    .background(
-                        LinearGradient(
-                            gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(0.7)]),
-                            startPoint: .top,
-                            endPoint: .bottom
-                        )
-                    )
+                    .gradientBackground(opacity1: 0.1, opacity2: 0.7)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
             })
             Spacer()
@@ -157,13 +58,7 @@ struct DailyRoutineExercise: View {
                     .bold()
                     .tint(.black)
                     .frame(width: 120, height: 60)
-                    .background(
-                        LinearGradient(
-                            gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(0.7)]),
-                            startPoint: .top,
-                            endPoint: .bottom
-                        )
-                    )
+                    .gradientBackground(opacity1: 0.1, opacity2: 0.7)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .overlay {
                         RoundedRectangle(cornerRadius: 10)

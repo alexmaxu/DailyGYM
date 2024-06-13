@@ -35,6 +35,16 @@ final class MuscleExerciseListVM: ObservableObject {
         } 
     }
     
+    func classifyExercisesByMuscle() {
+        for exercise in allExercises {
+            if exerciseDictionary[exercise.muscles] == nil {
+                exerciseDictionary[exercise.muscles] = [exercise]
+            } else {
+                exerciseDictionary[exercise.muscles]?.append(exercise)
+            }
+        }
+    }
+    
     func getMuscleExerciseList() async {
         do {
             let exerciseListResult = try await exerciseInteractor.fetchExercises(muscle: muscleTag)

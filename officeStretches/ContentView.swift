@@ -32,7 +32,7 @@ struct ContentView: View {
                 ExerciseRoutine(routineExercises: vm.dailyRoutine, exerciseLvl: profileVM.profile.levelSets, title: "Daily Routine", description: "Stay motivated and fit with our daily updated exercise routines. Each day, discover new workouts designed to challenge and energize you, tailored for all fitness levels. Never get bored with your fitness journey. Fresh sets of exercises awaits you every morning!", titleList: "Today's routine")
             })
             .navigationDestination(for: Muscles.self, destination: { muscle in
-                    MuscleExercisesList(muscleExerciseListVM: MuscleExerciseListVM(muscleTag: muscle), isPickMode: .noPick)
+                    MuscleExercisesList(muscleExerciseListVM: MuscleExerciseListVM(muscleTag: muscle))
             })
             .navigationDestination(for: Exercise.self, destination: { exercise in
                 ExerciseDetailView(exercise: exercise)
@@ -46,13 +46,7 @@ struct ContentView: View {
             .onAppear {
                 print("esoty aqui!contetn view")
             }
-            .background(
-                LinearGradient(
-                    gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(0.5)]),
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-            )
+            .gradientBackground(opacity1: 0.1, opacity2: 0.5)
         }
     }
 }

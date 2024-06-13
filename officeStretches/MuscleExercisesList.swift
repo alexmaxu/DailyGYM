@@ -8,11 +8,8 @@
 import SwiftUI
 
 struct MuscleExercisesList: View {
-    @EnvironmentObject var mainVM: MainViewVM
     
     @ObservedObject var muscleExerciseListVM: MuscleExerciseListVM
-
-    let isPickMode: ListToPickExercise
     
     var body: some View {
             ScrollView {
@@ -26,18 +23,11 @@ struct MuscleExercisesList: View {
                 }
             }
             .searchable(text: $muscleExerciseListVM.searchText, prompt: "Search")
-            .background(
-                LinearGradient(gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(0.5)]), startPoint: .top, endPoint: .bottom)
-            )
-            .onAppear {
-                print("lista de ejercisios")
-            }
+            .gradientBackground(opacity1: 0.1, opacity2: 0.5)
         }
-        
-    
 }
 
 #Preview {
-    MuscleExercisesList(muscleExerciseListVM: MuscleExerciseListVM(exerciseInteractor: PreviewExerciseInteractor(), muscleTag: .Biceps), isPickMode: .yesPick)
+    MuscleExercisesList(muscleExerciseListVM: MuscleExerciseListVM(exerciseInteractor: PreviewExerciseInteractor(), muscleTag: .Biceps))
         .environmentObject(MainViewVM(exerciseInteractor: PreviewExerciseInteractor()))
 }

@@ -12,6 +12,7 @@ struct ResumeExerciseRoutineList: View {
     var body: some View {
         if routineExercises.isEmpty {
             Text("Add exercises to your routine!")
+                .font(.title2)
         } else {
             ScrollView {
                 ForEach(routineExercises) { exercise in
@@ -32,13 +33,7 @@ struct ResumeExerciseRoutineList: View {
                                 .padding(.horizontal)
                         }
                         .frame(maxWidth: .infinity)
-                        .background(
-                            LinearGradient(
-                                gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(0.4)]),
-                                startPoint: .top,
-                                endPoint: .bottom
-                            )
-                        )
+                        .gradientBackground(opacity1: 0.1, opacity2: 0.4)
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                         .padding(.horizontal)
                     }

@@ -9,22 +9,26 @@ import SwiftUI
 
 struct CreateYourRoutineView: View {
     @Environment(\.dismiss) var dismiss
+    
+    // Tiene los datos generales de la app del ContentView
     @EnvironmentObject var vm: MainViewVM
+    
+    // Este view Model se encarga de cargar los ejercicios
     @ObservedObject var muscleExerciseListVM = MuscleExerciseListVM()
-    @State var muscle: Muscles = .All
+    
     @State var titleRoutine: String = ""
     
     var body: some View {
         VStack {
-            HStack {
-                Text("Your Routine:")
-                TextField("Title", text: $titleRoutine)
-                    .textFieldStyle(.roundedBorder)
-            }
-            .padding(.horizontal)
+            Text("Routine's name:")
+            TextField("Title", text: $titleRoutine)
+                .textFieldStyle(.roundedBorder)
+                
             ResumeExerciseRoutineList(routineExercises: $muscleExerciseListVM.myExervisListToSave)
                 .frame(height: 200)
-            Text("Exercise List")
+            Text("Exercises:")
+                .font(.title3)
+                .bold()
             ScrollView {
                 VStack {
                     ForEach(Muscles.allCases.dropLast()) { muscle in
@@ -51,16 +55,9 @@ struct CreateYourRoutineView: View {
                                 .tint(Color.black)
                                 .frame(maxWidth: .infinity)
                                 .padding()
-                                .background(
-                                    LinearGradient(
-                                        gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(0.4)]),
-                                        startPoint: .top,
-                                        endPoint: .bottom
-                                    )
-                                )
+                                .gradientBackground(opacity1: 0.1, opacity2: 0.4)
                                 .clipShape(RoundedRectangle(cornerRadius: 20))
                         }
-                        .padding(.horizontal)
                         
                     }
                 }
@@ -68,25 +65,19 @@ struct CreateYourRoutineView: View {
             }
             .scrollIndicators(.hidden)
             .scrollTargetBehavior(.viewAligned)
-            
         }
+        .padding(.horizontal)
         .toolbar {
             ToolbarItem (placement: .automatic) {
                 Button {
-                    vm.myExercises.append(MyExerciseModel(title: titleRoutine, routine: muscleExerciseListVM.myExervisListToSave))
+                    vm.addToMyExercises(titleRoutine: titleRoutine, routine: muscleExerciseListVM.myExervisListToSave)
                     dismiss()
                 } label: {
                     Text("Add routine")
                 }
             }
         }
-        .background(
-            LinearGradient(
-                gradient: Gradient(colors: [Color.cyan.opacity(0.1), Color.cyan.opacity(0.5)]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
-        )
+        .gradientBackground(opacity1: 0.1, opacity2: 0.5)
     }
 }
 
