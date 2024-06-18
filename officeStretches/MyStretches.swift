@@ -15,6 +15,13 @@ struct MyStretches: View {
             ForEach(arrayStretches, id:\.self) { myExercise in
                 NavigationLink(value: myExercise) {
                     MyStretchesCard(title: myExercise.title)
+                        .swipeActions {
+                            Button {
+                                print("hola")
+                            } label: {
+                                Text("hola")
+                            }
+                        }
                 }
             }
             MyStretchesCard(title: "Add new +")

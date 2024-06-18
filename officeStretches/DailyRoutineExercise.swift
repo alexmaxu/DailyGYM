@@ -21,29 +21,13 @@ struct DailyRoutineExercise: View {
     
     var body: some View {
         VStack {
-            Text(exercise.workOut)
-                .font(.title)
-                .bold()
-            Image(exercise.muscles.rawValue)
-                .resizable()
-                .scaledToFit()
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: 10)
-                .padding()
-            Text(exercise.explaination)
-                .padding(.bottom)
+            ExerciseHeader(exercise: exercise)
             SetDoneCount(setArray: $setArray, exerciseLvl: exerciseLvl, exercise: exercise)
             Spacer()
             Button(action: {
                 showSheetVideo.toggle()
             }, label: {
-                Text("Video")
-                    .font(.headline)
-                    .bold()
-                    .tint(.black)
-                    .frame(width: 90, height: 40)
-                    .gradientBackground(opacity1: 0.1, opacity2: 0.7)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                VideoLabel(text: "Video")
             })
             Spacer()
             Button {
@@ -53,18 +37,7 @@ struct DailyRoutineExercise: View {
                     showSheet.toggle()
                 }
             } label: {
-                Text("Done")
-                    .font(.title)
-                    .bold()
-                    .tint(.black)
-                    .frame(width: 120, height: 60)
-                    .gradientBackground(opacity1: 0.1, opacity2: 0.7)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(lineWidth: 3)
-                            .fill(.cyan.opacity(1))
-                    }
+                DoneLabel(text: "Done")
             }
             .padding(.bottom, 32)
         }

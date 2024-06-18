@@ -25,6 +25,35 @@ extension Profile {
     static var previewProfile = Profile(name: "Preview Alex", levelSets: .beginner, lvl: 121, image: .mapache )
 }
 
+extension MyExerciseModel {
+    static let previewMyExerciseModel = MyExerciseModel(
+        title: "Preview Warm Up routine",
+        routine: [Exercise(
+            muscles: .WarmUp,
+            workOut: "Jumping Jacks",
+            intensityLevel: .expert,
+            beginnerSets: .the3SetsWith12To15Reps,
+            intermediateSets: .the4SetsWith8To12Reps,
+            expertSets: .the5SetsWith3To10Reps,
+            equipment: nil,
+            explaination: "Jumping Jacks: A full-body movement that increases your heart rate and warms up your muscles.",
+            longExplanation: "The Jumping Jacks is a weight training exercise targeting the Warm Up. It involves using nan, focusing on the form and technique to effectively engage the muscles. Ideal for strength building and muscle definition, it's important to maintain controlled movements throughout.",
+            video: "https://www.youtube.com/results?search_query=Jumping+Jacks"
+        ), .previewExercise, Exercise(
+            muscles: .WarmUp,
+            workOut: "Jumping Jacks",
+            intensityLevel: .expert,
+            beginnerSets: .the3SetsWith12To15Reps,
+            intermediateSets: .the4SetsWith8To12Reps,
+            expertSets: .the5SetsWith3To10Reps,
+            equipment: nil,
+            explaination: "Jumping Jacks: A full-body movement that increases your heart rate and warms up your muscles.",
+            longExplanation: "The Jumping Jacks is a weight training exercise targeting the Warm Up. It involves using nan, focusing on the form and technique to effectively engage the muscles. Ideal for strength building and muscle definition, it's important to maintain controlled movements throughout.",
+            video: "https://www.youtube.com/results?search_query=Jumping+Jacks"
+        )]
+    )
+}
+
 extension Exercise {
     static let previewExercise: Exercise = Exercise(
         muscles: .Biceps,

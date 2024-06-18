@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.dismiss) var dismiss
     @EnvironmentObject var profileVM: ProfileVM
     @EnvironmentObject var vm: MainViewVM
     
@@ -38,13 +39,14 @@ struct ContentView: View {
                 ExerciseDetailView(exercise: exercise)
             })
             .navigationDestination(for: MyExerciseModel.self, destination: { myExercise in
-                ExerciseRoutine(routineExercises: myExercise.routine, exerciseLvl: profileVM.profile.levelSets, title: myExercise.title, description: myExercise.description ?? "", titleList: myExercise.title + "'s routine")
+                MyExerciseRoutine(myExercise: myExercise, exerciseLvl: profileVM.setsLvl)
+                    
             })
             .navigationDestination(isPresented: $showCreateRoutine, destination: {
                 CreateYourRoutineView()
             })
             .onAppear {
-                print("esoty aqui!contetn view")
+                print("esoty aqui! contetn view")
             }
             .gradientBackground(opacity1: 0.1, opacity2: 0.5)
         }
