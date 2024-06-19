@@ -18,6 +18,8 @@ struct SetDoneCount: View {
         switch exerciseLvl {
         case .beginner:
             Text(exercise.beginnerSets.rawValue)
+            Text("Count your sets:")
+                .font(.footnote)
             VStack {
                 HStack {
                     ForEach(0..<3) { index in
@@ -38,6 +40,7 @@ struct SetDoneCount: View {
             }
         case .intermediate:
             Text(exercise.intermediateSets.rawValue)
+            Text("Count your sets:")
             VStack {
                 HStack {
                     ForEach(0..<4) { index in
@@ -58,6 +61,7 @@ struct SetDoneCount: View {
             }
         case .expert:
             Text(exercise.expertSets.rawValue)
+            Text("Count your sets:")
             VStack {
                 HStack {
                     ForEach(0..<5) { index in

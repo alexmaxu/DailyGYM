@@ -23,7 +23,6 @@ struct CreateYourRoutineView: View {
             Text("Routine's name:")
             TextField("Title", text: $titleRoutine)
                 .textFieldStyle(.roundedBorder)
-                
             ResumeExerciseRoutineList(routineExercises: $muscleExerciseListVM.myExervisListToSave)
                 .frame(height: 200)
             Text("Exercises:")
@@ -39,8 +38,9 @@ struct CreateYourRoutineView: View {
                                     Spacer()
                                     Image(exercise.muscles.rawValue)
                                         .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 100)
+                                        .scaledToFill()
+                                        .frame(width: 120, height: 60)
+                                        .clipShape(RoundedRectangle(cornerRadius: 10))
                                     Button {
                                         muscleExerciseListVM.myExervisListToSave.append(exercise)
                                         print("le doy al botn")
@@ -70,8 +70,13 @@ struct CreateYourRoutineView: View {
         .toolbar {
             ToolbarItem (placement: .automatic) {
                 Button {
-                    vm.addToMyExercises(titleRoutine: titleRoutine, routine: muscleExerciseListVM.myExervisListToSave)
-                    dismiss()
+                    if !muscleExerciseListVM.myExervisListToSave.isEmpty {
+                        vm.addToMyExercises(titleRoutine: titleRoutine, routine: muscleExerciseListVM.myExervisListToSave)
+                        dismiss()
+                    } else {
+                       // crear una pantallita de alerta.
+                    }
+                    
                 } label: {
                     Text("Add routine")
                 }

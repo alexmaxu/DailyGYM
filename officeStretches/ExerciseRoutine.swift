@@ -15,7 +15,6 @@ struct ExerciseRoutine: View {
     @State var showSheetVideo = false
     @State var routineExercises: [Exercise]
     
-    
     let exerciseLvl: CaseSets
     let title: String
     let description: String
