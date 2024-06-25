@@ -17,7 +17,8 @@ struct DailyRoutineExercise: View {
     @Binding var showSheetVideo: Bool
     @Binding var showSheet: Bool
     
-    @State var setArray: [Bool] = [false, false, false, false, false]
+    @State var setArray: [Bool] = [false, false, false,
+    false, false]
     
     var body: some View {
         VStack {

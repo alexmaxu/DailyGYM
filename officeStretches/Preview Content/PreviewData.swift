@@ -25,6 +25,11 @@ extension Profile {
     static var previewProfile = Profile(name: "Preview Alex", levelSets: .beginner, lvl: 121, image: .mapache )
 }
 
+extension HistoryModel {
+    
+    static let previewHistoryList: [HistoryModel] = [HistoryModel(title: "Day1Preview", day: Date.now, exercises: Exercise.previewExercisesList)]
+}
+
 extension MyExerciseModel {
     static let previewMyExerciseModel = MyExerciseModel(
         title: "Preview Warm Up routine",

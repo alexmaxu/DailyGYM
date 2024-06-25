@@ -10,7 +10,7 @@ import Foundation
 struct Profile: Hashable {
     var name: String = "No Name"
     var levelSets: CaseSets = .beginner
-    var lvl: Int = 0
+    var lvl: Double = 0.00
     var image: ProfileImage = .mapache
 }
 

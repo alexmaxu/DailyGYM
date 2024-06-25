@@ -12,6 +12,8 @@ struct ContentView: View {
     @EnvironmentObject var profileVM: ProfileVM
     @EnvironmentObject var vm: MainViewVM
     
+    @State var showSheet: Bool = false
+    
     @State var showCreateRoutine: Bool = false
     
     var body: some View {
@@ -25,6 +27,9 @@ struct ContentView: View {
                 Spacer()
                 MyStretches(arrayStretches: vm.myExercises, showCreateRoutine: $showCreateRoutine)
                 TitleRow(title: "History", gradientOpacity: 0.7)
+                    .onTapGesture {
+                        showSheet.toggle()
+                    }
             }
             .navigationDestination(for: Profile.self, destination: { profile in
                 ProfileSettingsView()
@@ -45,9 +50,9 @@ struct ContentView: View {
             .navigationDestination(isPresented: $showCreateRoutine, destination: {
                 CreateYourRoutineView()
             })
-            .onAppear {
-                print("esoty aqui! contetn view")
-            }
+            .sheet(isPresented: $showSheet, content: {
+                HistoryView(history: $vm.history)
+            })
             .gradientBackground(opacity1: 0.1, opacity2: 0.5)
         }
     }

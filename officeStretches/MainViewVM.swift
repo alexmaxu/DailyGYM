@@ -15,7 +15,8 @@ final class MainViewVM: ObservableObject {
     @Published var myExercises: [MyExerciseModel] = MyExerciseModel.previewMyExerciseList
     
     @Published var exercises: [Exercise] = []
-//    @Published var myExervisListToSave: [Exercise] = []
+
+    @Published var history: [HistoryModel] = HistoryModel.previewHistoryList
     
     var muscleTofind: Muscles = .All
     
@@ -25,6 +26,11 @@ final class MainViewVM: ObservableObject {
             await getAllExercises()
             await getRandomRoutine()
         }
+    }
+    
+    func addToHistory(title: String, exercises: [Exercise]) {
+        let historyToAdd = HistoryModel(title: title, day: Date.now, exercises: exercises)
+        history.append(historyToAdd)
     }
     
     func addToMyExercises(titleRoutine: String, routine: [Exercise]) {

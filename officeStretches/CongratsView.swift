@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct CongratsView: View {
-    
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var profileVM: ProfileVM
+    @EnvironmentObject var vm: MainViewVM
+    
+    let title: String
+    let exercises: [Exercise]
+    
     
     var body: some View {
         ZStack {
@@ -32,6 +37,8 @@ struct CongratsView: View {
                     .padding()
                 Spacer()
                 Button(action: {
+                    profileVM.profile.lvl += 0.2
+                    vm.addToHistory(title: title, exercises: exercises)
                     dismiss()
                 }, label: {
                     Text("See you tomorrow!")
@@ -57,5 +64,6 @@ struct CongratsView: View {
 }
 
 #Preview {
-    CongratsView()
+    CongratsView(title: "title preview", exercises: Exercise.previewExercisesList)
+        
 }
