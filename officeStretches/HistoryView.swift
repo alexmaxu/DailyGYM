@@ -12,12 +12,16 @@ struct HistoryView: View {
     var body: some View {
         List {
             ForEach(history) { history in
-                Section("\(history.day)") {
-                    Text(history.title)
+                Section("\(history.date)") {
+                    DisclosureGroup {
+                        ForEach(history.exercises) { exercise in
+                            Text(exercise.workOut)
+                        }
+                    } label: {
+                        Text(history.title)
+                    }
                 }
             }
-            
-            
         }
     }
 }

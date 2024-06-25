@@ -29,7 +29,11 @@ final class MainViewVM: ObservableObject {
     }
     
     func addToHistory(title: String, exercises: [Exercise]) {
-        let historyToAdd = HistoryModel(title: title, day: Date.now, exercises: exercises)
+        let today = Date.now
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        let dateFormatted = formatter.string(from: today)
+        let historyToAdd = HistoryModel(title: title, date: dateFormatted, exercises: exercises)
         history.append(historyToAdd)
     }
     

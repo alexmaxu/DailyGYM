@@ -27,7 +27,7 @@ extension Profile {
 
 extension HistoryModel {
     
-    static let previewHistoryList: [HistoryModel] = [HistoryModel(title: "Day1Preview", day: Date.now, exercises: Exercise.previewExercisesList)]
+    static let previewHistoryList: [HistoryModel] = [HistoryModel(title: "Day1Preview", date: "21/02/24 preview", exercises: Exercise.previewExercisesList)]
 }
 
 extension MyExerciseModel {

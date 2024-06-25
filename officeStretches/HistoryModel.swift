@@ -11,6 +11,6 @@ struct HistoryModel: Identifiable {
     var id = UUID()
     
     let title: String
-    let day: Date
+    let date: String
     let exercises: [Exercise]
 }
