@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MyExerciseModel: Hashable {
+struct MyExerciseModel: Hashable, Codable {
     var title: String
     var description: String?
     var routine: [Exercise]

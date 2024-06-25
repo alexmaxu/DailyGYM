@@ -10,9 +10,10 @@ import Foundation
 final class ProfileVM: ObservableObject {
     @Published var profile = Profile()
     
-    var setsLvl = CaseSets.intermediate
+    let profileInteractor: profileInteractorProtocol
     
-    init(profile: Profile = Profile()) {
-        self.profile = profile
+    init(profileInteractor: profileInteractorProtocol = ProfileInteractor.shared) {
+        self.profileInteractor = profileInteractor
     }
+    // falta hacer el save y load de profile y lvl
 }

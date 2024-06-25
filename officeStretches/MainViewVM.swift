@@ -12,7 +12,11 @@ final class MainViewVM: ObservableObject {
     let exerciseInteractor: ExerciseInteractorProtocol
     
     @Published var dailyRoutine: [Exercise] = []
-    @Published var myExercises: [MyExerciseModel] = MyExerciseModel.previewMyExerciseList
+    @Published var myExercises: [MyExerciseModel] = [] {
+        didSet {
+            saveMyExercises()
+        }
+    }
     
     @Published var exercises: [Exercise] = []
 
@@ -22,11 +26,29 @@ final class MainViewVM: ObservableObject {
     
     init(exerciseInteractor: ExerciseInteractorProtocol = ExerciseInteractor.shared ) {
         self.exerciseInteractor = exerciseInteractor
+        getMyExercises()
         Task {
             await getAllExercises()
             await getRandomRoutine()
         }
     }
+    
+    func saveMyExercises() {
+        do {
+            try exerciseInteractor.saveMyExercises(myExercises: myExercises)
+        } catch {
+            print(error)
+        }
+    }
+    
+    func getMyExercises() {
+        do {
+            self.myExercises = try exerciseInteractor.loadMyExercises()
+        } catch {
+            self.myExercises = []
+        }
+    }
+    
     
     func addToHistory(title: String, exercises: [Exercise]) {
         let today = Date.now

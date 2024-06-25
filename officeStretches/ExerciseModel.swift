@@ -33,7 +33,7 @@ struct Exercise: Codable, Identifiable, Hashable{
     }
 }
 
-enum CaseSets: String, CaseIterable, Identifiable {
+enum CaseSets: String, CaseIterable, Identifiable, Codable {
     var id: Self { self }
     case beginner = "3 Sets with 12 to 15 reps"
     case intermediate = "4 Sets with 8 to 12 reps"

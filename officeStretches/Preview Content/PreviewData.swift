@@ -8,6 +8,14 @@
 import Foundation
 
 struct PreviewExerciseInteractor: ExerciseInteractorProtocol {
+    func loadMyExercises() throws -> [MyExerciseModel] {
+        []
+    }
+    
+    func saveMyExercises(myExercises: [MyExerciseModel]) throws {
+        
+    }
+    
     func fetchAllExercises() async throws -> [Exercise] {
         let url = Bundle.main.url(forResource: "ExerciseList", withExtension: "json")!
         let data = try Data(contentsOf: url)
@@ -200,6 +208,14 @@ extension MyExerciseModel {
 }
 
 struct ExerciseInteractorProtocolPreview: ExerciseInteractorProtocol {
+    func loadMyExercises() throws -> [MyExerciseModel] {
+        return [MyExerciseModel(title: "hola", description: "deshola", routine: [])]
+    }
+    
+    func saveMyExercises(myExercises: [MyExerciseModel]) throws {
+        
+    }
+    
     func fetchExercises(muscle: Muscles) async throws -> [Exercise] {
         let url = Bundle.main.url(forResource: "ExerciseList", withExtension: "json")!
         let data = try Data(contentsOf: url)

@@ -10,6 +10,9 @@ import Foundation
 protocol ExerciseInteractorProtocol {
     func fetchExercises(muscle: Muscles) async throws -> [Exercise]
     func fetchAllExercises() async throws -> [Exercise]
+    
+    func loadMyExercises() throws -> [MyExerciseModel]
+    func saveMyExercises(myExercises: [MyExerciseModel]) throws
 }
 
 struct ExerciseInteractor: NetworkInteractor, ExerciseInteractorProtocol {
@@ -28,6 +31,21 @@ struct ExerciseInteractor: NetworkInteractor, ExerciseInteractorProtocol {
     func fetchAllExercises() async throws -> [Exercise] {
         try await getJSONFromURL(request: .getAllExercisesURL(url: .getExerciseURL), type: [Exercise].self)
     }
+    
+    func loadMyExercises() throws -> [MyExerciseModel] {
+        if FileManager.default.fileExists(atPath: URL.documentsDirectory.appending(path: "MyExercises.json").path()) {
+            let data = try Data(contentsOf: URL.documentsDirectory.appending(path: "MyExercises.json"))
+            return try JSONDecoder().decode([MyExerciseModel].self, from: data)
+        } else {
+            return []
+        }
+    }
+    
+    func saveMyExercises(myExercises: [MyExerciseModel]) throws {
+        let data = try JSONEncoder().encode(myExercises)
+        try data.write(to: URL.documentsDirectory.appending(path: "MyExercises.json"), options: .atomic)
+    }
+    
 }
 
 

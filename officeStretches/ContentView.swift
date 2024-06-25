@@ -44,7 +44,7 @@ struct ContentView: View {
                 ExerciseDetailView(exercise: exercise)
             })
             .navigationDestination(for: MyExerciseModel.self, destination: { myExercise in
-                MyExerciseRoutine(myExercise: myExercise, exerciseLvl: profileVM.setsLvl)
+                MyExerciseRoutine(myExercise: myExercise, exerciseLvl: profileVM.profile.levelSets)
                     
             })
             .navigationDestination(isPresented: $showCreateRoutine, destination: {

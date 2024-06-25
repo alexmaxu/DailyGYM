@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct Profile: Hashable {
+struct Profile: Hashable, Codable {
     var name: String = "No Name"
     var levelSets: CaseSets = .beginner
     var lvl: Double = 0.00
     var image: ProfileImage = .mapache
 }
 
-enum ProfileImage: String, CaseIterable, Identifiable {
+enum ProfileImage: String, CaseIterable, Identifiable, Codable {
     var id: Self { self }
     
     case mapache
