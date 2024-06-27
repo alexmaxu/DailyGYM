@@ -1,4 +1,4 @@
-# DailyGYM App
+![Simulator Screen Recording - iPhone 15 Pro - 2024-06-27 at 10 05 32](https://github.com/alexmaxu/DalilyGYM/assets/151617333/dbc6b522-ca18-421c-a3a5-e705eafa90ac)# DailyGYM App
 
 Hi! My name is Alex, and this is a personal project to improve my skills as an iOS developer. 
 
@@ -9,6 +9,16 @@ MVVM is an architecture that clearly separates presentation logic (View) from bu
 - *Model:* Defines the "ExerciseModel" struct representing an exercise with the name, type muscle, the intensity lvl, video, It implements Identifiable to uniquely identify each exercise in a list, and so on.
 
    ![image](https://github.com/alexmaxu/DalilyGYM/assets/151617333/9c50fa13-42e8-4542-8aaa-6678dad433d8)
+
+- *ViewModel:* Acts as an intermediary between the View (UI) and the Model (data and business logic) and manages the state of the View. *@Published* is a Property Wrapper SwiftUI and Combine framework. It is used in ViewModels to automatically notify the View when a property changes. This enables reactive UI updates based on data changes.
+  
+   ![image](https://github.com/alexmaxu/DalilyGYM/assets/151617333/c1587e0b-a135-4b7e-b227-88dce9bc2dc3)
+
+- *View:* The view primarily focuses on rendering the user interface and responding to user interactions. In ContentView, it binds to view models to display profile information, daily routines, and exercise lists. It also manages navigation to different views and displays history in a modal sheet based on user actions.
+
+![image](https://github.com/alexmaxu/DalilyGYM/assets/151617333/e6a52067-c9ed-45e7-8950-42cbb03902a2)
+
+
 
 
 ## Data Persistence
