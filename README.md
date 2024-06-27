@@ -1,6 +1,29 @@
 # DailyGYM App
 
-Hi! My name is Alex, and this is a personal project to improve my skills as an iOS developer. I hope you find it interesting!
+Hi! My name is Alex, and this is a personal project to improve my skills as an iOS developer. 
+
+## Architecture (MVVM)
+
+MVVM is an architecture that clearly separates presentation logic (View) from business logic (ViewModel) and data (Model). 
+
+- *Model:* Defines the "ExerciseModel" struct representing an exercise with the name, type muscle, the intensity lvl, video, It implements Identifiable to uniquely identify each exercise in a list, and so on.
+
+   ![image](https://github.com/alexmaxu/DalilyGYM/assets/151617333/9c50fa13-42e8-4542-8aaa-6678dad433d8)
+
+
+## Data Persistence
+
+DailyGYM utilizes JSON for data persistence, allowing efficient storage and retrieval of exercise routines. Here's how it works:
+
+- *Encoding and Storage:* Exercise routines are encoded into JSON format using JSONEncoder and stored in the local file system of the application.
+- *Data Retrieval:* Upon application launch, DailyGYM checks for previously saved data. If data is found, it is loaded and used; otherwise, it initializes with an empty array.
+![image](https://github.com/alexmaxu/DalilyGYM/assets/151617333/d4a4209f-770d-448a-966b-21de10d443f1)
+
+This approach ensures users can maintain and customize their exercise routines, even when offline.
+
+
+
+I hope you find it interesting!
 
 ## Overview
 
@@ -25,6 +48,7 @@ DailyGYM is a fitness app designed for iOS to help users maintain an active life
    ![Simulator Screen Recording - iPhone 15 Pro - 2024-06-27 at 10 11 20](https://github.com/alexmaxu/DalilyGYM/assets/151617333/859f2c3e-bc3c-4941-8ff1-b6c674a54cab)
 
 ## Why DailyGYM?
+
 Many of us spend long hours in front of screens. DailyGYM aims to simplify fitness by eliminating the guesswork and making it easy to stay active, whether you're at home, at work, or on the go.
 
 ## Installation
