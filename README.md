@@ -1,4 +1,4 @@
-![Simulator Screen Recording - iPhone 15 Pro - 2024-06-27 at 10 05 32](https://github.com/alexmaxu/DalilyGYM/assets/151617333/dbc6b522-ca18-421c-a3a5-e705eafa90ac)# DailyGYM App
+# DailyGYM App
 
 Hi! My name is Alex, and this is a personal project to improve my skills as an iOS developer. 
 
