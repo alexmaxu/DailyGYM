@@ -6,7 +6,7 @@ Hi! My name is Alex, and this is a personal project to improve my skills as an i
 
 MVVM is an architecture that clearly separates presentation logic (View) from business logic (ViewModel) and data (Model). 
 
-- *Model:* Defines the "ExerciseModel" struct representing an exercise with the name, type muscle, the intensity lvl, video, It implements Identifiable to uniquely identify each exercise in a list, and so on.
+- *Model:* Defines the "Exercise" struct representing an exercise with the name, type muscle, the intensity lvl, video, It implements Identifiable to uniquely identify each exercise in a list, and so on.
 
    ![image](https://github.com/alexmaxu/DalilyGYM/assets/151617333/9c50fa13-42e8-4542-8aaa-6678dad433d8)
 
