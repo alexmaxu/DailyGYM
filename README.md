@@ -6,20 +6,17 @@ Hi! My name is Alex, and this is a personal project to improve my skills as an i
 
 MVVM is an architecture that clearly separates presentation logic (View) from business logic (ViewModel) and data (Model). 
 
-- *Model:* Defines the "Exercise" struct representing an exercise with the name, type muscle, the intensity lvl, video, It implements Identifiable to uniquely identify each exercise in a list, and so on.
+- **Model:** Defines the "Exercise" struct representing an exercise with the name, type muscle, the intensity lvl, video, It implements Identifiable to uniquely identify each exercise in a list, and so on.
 
    ![image](https://github.com/alexmaxu/DalilyGYM/assets/151617333/9c50fa13-42e8-4542-8aaa-6678dad433d8)
 
-- *ViewModel:* Acts as an intermediary between the View (UI) and the Model (data and business logic) and manages the state of the View. *@Published* is a Property Wrapper SwiftUI and Combine framework. It is used in ViewModels to automatically notify the View when a property changes. This enables reactive UI updates based on data changes.
+- **ViewModel:** Acts as an intermediary between the View (UI) and the Model (data and business logic) and manages the state of the View. *@Published* is a Property Wrapper SwiftUI and Combine framework. It is used in ViewModels to automatically notify the View when a property changes. This enables reactive UI updates based on data changes.
   
    ![image](https://github.com/alexmaxu/DalilyGYM/assets/151617333/c1587e0b-a135-4b7e-b227-88dce9bc2dc3)
 
-- *View:* The view primarily focuses on rendering the user interface and responding to user interactions. In ContentView, it binds to view models to display profile information, daily routines, and exercise lists. It also manages navigation to different views and displays history in a modal sheet based on user actions.
+- **View:** The view primarily focuses on rendering the user interface and responding to user interactions. In ContentView, it binds to view models to display profile information, daily routines, and exercise lists. It also manages navigation to different views and displays history in a modal sheet based on user actions.
 
 ![image](https://github.com/alexmaxu/DalilyGYM/assets/151617333/e6a52067-c9ed-45e7-8950-42cbb03902a2)
-
-
-
 
 ## Data Persistence
 
@@ -31,7 +28,14 @@ DailyGYM utilizes JSON for data persistence, allowing efficient storage and retr
 
 This approach ensures users can maintain and customize their exercise routines, even when offline.
 
+## API 
 
+All data we use for the app is obtained from an API. DailyGYM connects to an external API to fetch tailored daily exercises and user profiles. We use URLSession in Swift to make HTTP GET requests to the API, which returns data in JSON format. The received data is decoded using JSONDecoder and used to update the local data models in our application.
+
+![image](https://github.com/alexmaxu/DalilyGYM/assets/151617333/f8fa7177-24ef-44cd-a9dd-9830280477a2)
+![image](https://github.com/alexmaxu/DalilyGYM/assets/151617333/b3c4c4aa-dd52-42ba-b81a-d92f2fd4a37b)
+
+The API accepts query parameters that allow filtering by a list of specific muscles, name, equipment, and more. However, for simplicity and to keep the app intuitive, DailyGYM primarily uses the muscle type query parameter.
 
 I hope you find it interesting!
 
@@ -41,19 +45,19 @@ DailyGYM is a fitness app designed for iOS to help users maintain an active life
 
 ## Features
 
-- Daily Routines: Automatically generated daily exercise routines based on your skills and preferences.
+- **Daily Routines:** Automatically generated daily exercise routines based on your skills and preferences.
   
    ![Simulator Screen Recording - iPhone 15 Pro - 2024-06-27 at 10 08 43](https://github.com/alexmaxu/DalilyGYM/assets/151617333/47e6c0bb-04a1-4fb4-8688-eecd5592b5d2)
 
-- Customization: Ability to create and customize personal workout routines from a wide variety of exercises.
+- **Customization:** Ability to create and customize personal workout routines from a wide variety of exercises.
   
    ![Simulator Screen Recording - iPhone 15 Pro - 2024-06-27 at 10 05 32](https://github.com/alexmaxu/DalilyGYM/assets/151617333/9d0cf9b3-a15b-4e80-b385-dbbe62dccfab)
 
-- User-Friendly Interface: Intuitive and easy-to-use design for a seamless fitness experience.
+- **User-Friendly Interface:** Intuitive and easy-to-use design for a seamless fitness experience.
   
    ![Simulator Screen Recording - iPhone 15 Pro - 2024-06-27 at 10 03 19](https://github.com/alexmaxu/DalilyGYM/assets/151617333/18cf7c4f-d658-492f-8f3a-8b63c5602e76)
 
-- Motivation: Track your progress and stay motivated with built-in features.
+- **Motivation:** Track your progress and stay motivated with built-in features.
   
    ![Simulator Screen Recording - iPhone 15 Pro - 2024-06-27 at 10 11 20](https://github.com/alexmaxu/DalilyGYM/assets/151617333/859f2c3e-bc3c-4941-8ff1-b6c674a54cab)
 
