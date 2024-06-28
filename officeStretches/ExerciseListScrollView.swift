@@ -11,7 +11,7 @@ struct ExerciseListScrollView: View {
     
     var body: some View {
         ScrollView(.horizontal) {
-            HStack {
+           LazyHStack {
                 ForEach(Muscles.allCases) { muscle in
                     NavigationLink(value: muscle) {
                         VStack {
@@ -31,7 +31,7 @@ struct ExerciseListScrollView: View {
             }
         }
         .scrollIndicators(.hidden)
-        .scrollTargetBehavior(.viewAligned)
+
     }
 }
 

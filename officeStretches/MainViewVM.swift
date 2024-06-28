@@ -20,7 +20,7 @@ final class MainViewVM: ObservableObject {
     
     @Published var exercises: [Exercise] = []
 
-    @Published var history: [HistoryModel] = HistoryModel.previewHistoryList
+    @Published var history: [HistoryModel] = []
     
     var muscleTofind: Muscles = .All
     

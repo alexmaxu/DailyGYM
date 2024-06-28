@@ -10,6 +10,7 @@ import SwiftUI
 struct HistoryView: View {
     @Binding var history: [HistoryModel]
     var body: some View {
+        Text("History:")
         List {
             ForEach(history) { history in
                 Section("\(history.date)") {

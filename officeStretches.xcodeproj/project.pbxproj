@@ -153,7 +153,6 @@
 			children = (
 				5F6ECDDA2BFB2FC20020644D /* System */,
 				5F6ECDDB2BFB2FCC0020644D /* Views */,
-				5F6ECDD72BFB2EF00020644D /* Components */,
 				5FC108D52BFDFC5A004B33FE /* VM */,
 				5FC108D22BFDDA48004B33FE /* Interactor */,
 				5FAA3C922BFD3C4000D4297F /* Interface */,
@@ -217,6 +216,7 @@
 				5F3C4D662C13A714002969A6 /* CreateYourRoutineView.swift */,
 				5FA2B7B52C19FA3700757F83 /* CongratsView.swift */,
 				5F5FF7AC2C2558EA00462B5D /* HistoryView.swift */,
+				5F6ECDD72BFB2EF00020644D /* Components */,
 			);
 			name = Views;
 			sourceTree = "<group>";

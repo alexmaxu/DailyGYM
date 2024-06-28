@@ -40,7 +40,7 @@ struct ExerciseInteractor: NetworkInteractor, ExerciseInteractorProtocol {
             return []
         }
     }
-    
+
     func saveMyExercises(myExercises: [MyExerciseModel]) throws {
         let data = try JSONEncoder().encode(myExercises)
         try data.write(to: URL.documentsDirectory.appending(path: "MyExercises.json"), options: .atomic)

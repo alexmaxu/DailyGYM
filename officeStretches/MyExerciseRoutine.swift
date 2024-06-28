@@ -60,7 +60,7 @@ struct MyExerciseRoutine: View {
         }
         
         .sheet(isPresented: $showSheet) {
-            CongratsView(dismiss: _dismiss, title: myExercise.title, exercises: myExercise.routine)
+            CongratsView(dismiss: dismiss, title: myExercise.title, exercises: myExercise.routine)
             // Como puedo pasar el dismis de ExerciseRoutine al congrats? para que sirve el "_"
         }
         .tabViewStyle(.page)
