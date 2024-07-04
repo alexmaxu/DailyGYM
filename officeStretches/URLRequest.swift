@@ -10,6 +10,9 @@ import Foundation
 extension URLRequest {
     static func get(url: URL, muscle: Muscles) async throws -> URLRequest {
         var request = URLRequest(url: url)
+        //        I know all the API key management should be in a .plist file and handled with a different struct.
+        //        But I wanted to finish the visual content first to show it to the recruiter. It's on my to-do list though.
+        
 //        CUENTA DE ALEXMAXU
         let headers = [
             "X-RapidAPI-Key": "6313d80101mshcf7534d37d3d405p171bf2jsn2509c89a5d1d",
@@ -36,6 +39,9 @@ extension URLRequest {
     
     static func getAllExercisesURL(url:URL) async throws -> URLRequest {
         var request = URLRequest(url: url)
+        //        I know all the API key management should be in a .plist file and handled with a different struct.
+        //        But I wanted to finish the visual content first to show it to the recruiter. It's on my to-do list though.
+        
 //      CUENTA DE ALEXMAXU
       let headers = [
           "X-RapidAPI-Key": "6313d80101mshcf7534d37d3d405p171bf2jsn2509c89a5d1d",
