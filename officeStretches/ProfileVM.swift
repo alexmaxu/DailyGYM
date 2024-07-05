@@ -10,10 +10,27 @@ import Foundation
 final class ProfileVM: ObservableObject {
     @Published var profile = Profile()
     
+    
     let profileInteractor: profileInteractorProtocol
     
     init(profileInteractor: profileInteractorProtocol = ProfileInteractor.shared) {
         self.profileInteractor = profileInteractor
+        loadProfile()
     }
-    // falta hacer el save y load de profile y lvl
+    
+    func loadProfile() {
+        do {
+            self.profile = try profileInteractor.loadProfile()
+        } catch {
+            print(error)
+        }
+    }
+    
+    func saveProfile() {
+        do {
+            try profileInteractor.saveProfile(profile: profile)
+        } catch {
+            print(error)
+        }
+    }
 }

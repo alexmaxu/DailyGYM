@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileSettingsView: View {
+    @Environment(\.dismiss) var dismiss
     @EnvironmentObject var vmProfile: ProfileVM
     
     var body: some View {
@@ -56,6 +57,18 @@ struct ProfileSettingsView: View {
                 })
             }
             .padding()
+            HStack {
+                Spacer()
+                Button {
+                    vmProfile.saveProfile()
+                    dismiss()
+                } label: {
+                    DoneLabel(text: "Save")
+                }
+                
+                
+                Spacer()
+            }
             Spacer()
         }
         .padding()
