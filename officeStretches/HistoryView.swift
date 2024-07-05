@@ -12,7 +12,6 @@ struct HistoryView: View {
     var body: some View {
         Text("History:")
             .padding(.top)
-            .padding()
         List {
             ForEach(history) { history in
                 Section("\(history.date)") {
