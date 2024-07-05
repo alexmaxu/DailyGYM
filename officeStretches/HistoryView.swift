@@ -11,6 +11,7 @@ struct HistoryView: View {
     @Binding var history: [HistoryModel]
     var body: some View {
         Text("History:")
+            .padding(.top)
         List {
             ForEach(history) { history in
                 Section("\(history.date)") {
