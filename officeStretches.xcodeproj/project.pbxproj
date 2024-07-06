@@ -55,6 +55,7 @@
 		5FC108DB2BFE02DE004B33FE /* ExerciseList.json in Resources */ = {isa = PBXBuildFile; fileRef = 5FC108DA2BFE02DD004B33FE /* ExerciseList.json */; };
 		5FC108DD2BFE04E4004B33FE /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC108DC2BFE04E4004B33FE /* PreviewData.swift */; };
 		5FC4870F2C0DA583009B9A0A /* MyExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC4870E2C0DA583009B9A0A /* MyExerciseModel.swift */; };
+		5FC9AFF02C392A5200B64261 /* ExerciseRoutineText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9AFEF2C392A5200B64261 /* ExerciseRoutineText.swift */; };
 		5FCE64072C085CFF001B4E91 /* ExerciseRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCE64062C085CFF001B4E91 /* ExerciseRoutine.swift */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +109,7 @@
 		5FC108DA2BFE02DD004B33FE /* ExerciseList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ExerciseList.json; sourceTree = "<group>"; };
 		5FC108DC2BFE04E4004B33FE /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		5FC4870E2C0DA583009B9A0A /* MyExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExerciseModel.swift; sourceTree = "<group>"; };
+		5FC9AFEF2C392A5200B64261 /* ExerciseRoutineText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRoutineText.swift; sourceTree = "<group>"; };
 		5FCE64062C085CFF001B4E91 /* ExerciseRoutine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRoutine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -238,6 +240,7 @@
 				5FC4870E2C0DA583009B9A0A /* MyExerciseModel.swift */,
 				5F7506D22C10DF3D003BEFA0 /* Enums.swift */,
 				5F5FF7AE2C255E5D00462B5D /* HistoryModel.swift */,
+				5FC9AFEF2C392A5200B64261 /* ExerciseRoutineText.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 			files = (
 				5F6ECDE12BFB39140020644D /* MyStretchesCard.swift in Sources */,
 				5FA2B7B62C19FA3700757F83 /* CongratsView.swift in Sources */,
+				5FC9AFF02C392A5200B64261 /* ExerciseRoutineText.swift in Sources */,
 				5FAA3C9D2BFD436B00D4297F /* URLRequest.swift in Sources */,
 				5F7D833E2C1A140800A27F75 /* SetDoneCount.swift in Sources */,
 				5F9628942C01C41B00C4DC98 /* MuscleExercisesList.swift in Sources */,

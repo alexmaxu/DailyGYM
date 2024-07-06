@@ -35,20 +35,23 @@ struct ContentView: View {
                 ProfileSettingsView()
             })
             .navigationDestination(for: [Exercise].self, destination: { routine in
-                ExerciseRoutine(routineExercises: vm.dailyRoutine, exerciseLvl: profileVM.profile.levelSets, title: "Daily Routine", description: "Stay motivated and fit with our daily updated exercise routines. Each day, discover new workouts designed to challenge and energize you, tailored for all fitness levels. Never get bored with your fitness journey. Fresh sets of exercises awaits you every morning!", titleList: "Today's routine")
+                ExerciseRoutine(routineExercises: vm.dailyRoutine, exerciseLvl: profileVM.profile.levelSets, title: .titleRoutine, description: .descriptionRoutine, titleList: .titleListRoutine)
             })
             .navigationDestination(for: Muscles.self, destination: { muscle in
-                    MuscleExercisesList(muscleExerciseListVM: MuscleExerciseListVM(muscleTag: muscle))
+                MuscleExercisesList(muscleExerciseListVM: MuscleExerciseListVM(muscleTag: muscle))
             })
             .navigationDestination(for: Exercise.self, destination: { exercise in
                 ExerciseDetailView(exercise: exercise)
             })
             .navigationDestination(for: MyExerciseModel.self, destination: { myExercise in
                 MyExerciseRoutine(myExercise: myExercise, exerciseLvl: profileVM.profile.levelSets)
-                    
+                
             })
             .navigationDestination(isPresented: $showCreateRoutine, destination: {
                 CreateYourRoutineView()
+                    .onAppear {
+                        print("hola")
+                    }
             })
             .sheet(isPresented: $showSheet, content: {
                 HistoryView(history: $vm.history)
@@ -57,6 +60,7 @@ struct ContentView: View {
         }
     }
 }
+
 
 #Preview {
     ContentView()

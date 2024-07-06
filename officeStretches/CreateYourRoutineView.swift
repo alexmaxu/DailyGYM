@@ -23,7 +23,7 @@ struct CreateYourRoutineView: View {
             Text("Routine's name:")
             TextField("Title", text: $titleRoutine)
                 .textFieldStyle(.roundedBorder)
-            ResumeExerciseRoutineList(routineExercises: $muscleExerciseListVM.myExervisListToSave)
+//            ResumeExerciseRoutineList(routineExercises: $muscleExerciseListVM.myExervisListToSave)
                 .frame(height: 200)
             Text("Exercises:")
                 .font(.title3)

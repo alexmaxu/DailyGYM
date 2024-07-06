@@ -35,6 +35,18 @@ final class MuscleExerciseListVM: ObservableObject {
         } 
     }
     
+    func getAllExercises() async {
+        do {
+            let exerciseListResult = try await exerciseInteractor.fetchAllExercises()
+            print("I got all exercises")
+            await MainActor.run {
+                self.allExercises = exerciseListResult
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
     func classifyExercisesByMuscle() {
         for exercise in allExercises {
             if exerciseDictionary[exercise.muscles] == nil {
@@ -69,16 +81,6 @@ final class MuscleExerciseListVM: ObservableObject {
         }
     }
     
-    func getAllExercises() async {
-        do {
-            let exerciseListResult = try await exerciseInteractor.fetchAllExercises()
-            print("I got all exercises")
-            await MainActor.run {
-                self.allExercises = exerciseListResult
-            }
-        } catch {
-            print(error)
-        }
-    }
+    
     
 }
