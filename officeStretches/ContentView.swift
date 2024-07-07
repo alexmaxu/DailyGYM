@@ -38,7 +38,7 @@ struct ContentView: View {
                 ExerciseRoutine(routineExercises: vm.dailyRoutine, exerciseLvl: profileVM.profile.levelSets, title: .titleRoutine, description: .descriptionRoutine, titleList: .titleListRoutine)
             })
             .navigationDestination(for: Muscles.self, destination: { muscle in
-                MuscleExercisesList(muscleExerciseListVM: MuscleExerciseListVM(muscleTag: muscle))
+                MuscleExercisesList(muscle: muscle)
             })
             .navigationDestination(for: Exercise.self, destination: { exercise in
                 ExerciseDetailView(exercise: exercise)

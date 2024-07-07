@@ -11,6 +11,16 @@ final class MainViewVM: ObservableObject {
     
     let exerciseInteractor: ExerciseInteractorProtocol
     
+    
+    
+    
+    @Published var searchText: String = ""
+    
+    var exerciseDictionary: [Muscles:[Exercise]] = [:]
+    
+    
+    
+    
     @Published var dailyRoutine: [Exercise] = []
     @Published var myExercises: [MyExerciseModel] = [] {
         didSet {
@@ -30,6 +40,14 @@ final class MainViewVM: ObservableObject {
         Task {
             await getAllExercises()
             await getRandomRoutine()
+            
+            for exercise in exercises {
+                if exerciseDictionary[exercise.muscles] == nil {
+                    exerciseDictionary[exercise.muscles] = [exercise]
+                } else {
+                    exerciseDictionary[exercise.muscles]?.append(exercise)
+                }
+            }
         }
     }
     

@@ -9,12 +9,14 @@ import SwiftUI
 
 struct MuscleExercisesList: View {
     
-    @ObservedObject var muscleExerciseListVM: MuscleExerciseListVM
+    @EnvironmentObject var vm: MainViewVM
+    
+    var muscle: Muscles
     
     var body: some View {
             ScrollView {
                 VStack {
-                    ForEach(muscleExerciseListVM.muscleExercises) { exercise in
+                    ForEach(vm.exerciseDictionary[muscle] ?? []) { exercise in
                         NavigationLink(value: exercise ) {
                             TitleRow(title: exercise.workOut, gradientOpacity: 0.5)
                                 .foregroundStyle(.black)
@@ -22,12 +24,12 @@ struct MuscleExercisesList: View {
                     }
                 }
             }
-            .searchable(text: $muscleExerciseListVM.searchText, prompt: "Search")
+            .searchable(text: $vm.searchText, prompt: "Search")
             .gradientBackground(opacity1: 0.1, opacity2: 0.5)
         }
 }
 
 #Preview {
-    MuscleExercisesList(muscleExerciseListVM: MuscleExerciseListVM(exerciseInteractor: PreviewExerciseInteractor(), muscleTag: .Biceps))
+    MuscleExercisesList(muscle: .Biceps)
         .environmentObject(MainViewVM(exerciseInteractor: PreviewExerciseInteractor()))
 }
