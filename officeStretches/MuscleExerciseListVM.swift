@@ -38,7 +38,7 @@ final class MuscleExerciseListVM: ObservableObject {
     func getAllExercises() async {
         do {
             let exerciseListResult = try await exerciseInteractor.fetchAllExercises()
-            print("I got all exercises")
+            print("I got all exercises MuscleExerciseListVM ")
             await MainActor.run {
                 self.allExercises = exerciseListResult
             }
@@ -60,6 +60,7 @@ final class MuscleExerciseListVM: ObservableObject {
     func getMuscleExerciseList() async {
         do {
             let exerciseListResult = try await exerciseInteractor.fetchExercises(muscle: muscleTag)
+            print("get muscleExercise witch muscletag")
             await MainActor.run {
                 self.muscleExercises = exerciseListResult
             }
@@ -68,18 +69,18 @@ final class MuscleExerciseListVM: ObservableObject {
         }
     }
     
-    func getMuscleExerciseListWithMuscle(muscle: Muscles) async {
-        do {
-            let exerciseListResult = try await exerciseInteractor.fetchExercises(muscle: muscle)
-            print("I got \(muscle.rawValue) exercises")
-            await MainActor.run {
-                exerciseDictionary[muscle] = exerciseListResult
-                print(muscle.rawValue)
-            }
-        } catch {
-            print(error)
-        }
-    }
+//    func getMuscleExerciseListWithMuscle(muscle: Muscles) async {
+//        do {
+//            let exerciseListResult = try await exerciseInteractor.fetchExercises(muscle: muscle)
+//            print("I got \(muscle.rawValue) exercises")
+//            await MainActor.run {
+//                exerciseDictionary[muscle] = exerciseListResult
+//                print(muscle.rawValue)
+//            }
+//        } catch {
+//            print(error)
+//        }
+//    }
     
     
     

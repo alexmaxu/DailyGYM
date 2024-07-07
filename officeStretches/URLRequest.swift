@@ -14,10 +14,10 @@ extension URLRequest {
         //        But I wanted to finish the visual content first to show it to the recruiter. It's on my to-do list though.
         
         //        CUENTA DE ALEXMAXU
-        //        let headers = [
-        //            "X-RapidAPI-Key": "6313d80101mshcf7534d37d3d405p171bf2jsn2509c89a5d1d",
-        //            "X-RapidAPI-Host": "work-out-api1.p.rapidapi.com"
-        //        ]
+                let headers = [
+                    "X-RapidAPI-Key": "6313d80101mshcf7534d37d3d405p171bf2jsn2509c89a5d1d",
+                    "X-RapidAPI-Host": "work-out-api1.p.rapidapi.com"
+                ]
         
         //        CUENTA DE ALEXHHANWAYY
         //        let headers = [
@@ -32,10 +32,10 @@ extension URLRequest {
         //        ]
         
         //        CUENTA yas
-        let headers = [
-            "x-rapidapi-key": "21a2f574c4msh3aeb48e3fbc40e4p15b96ajsn5dff1d0c59a3",
-            "x-rapidapi-host": "work-out-api1.p.rapidapi.com"
-        ]
+//        let headers = [
+//            "x-rapidapi-key": "21a2f574c4msh3aeb48e3fbc40e4p15b96ajsn5dff1d0c59a3",
+//            "x-rapidapi-host": "work-out-api1.p.rapidapi.com"
+//        ]
         
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
@@ -49,10 +49,10 @@ extension URLRequest {
         //        But I wanted to finish the visual content first to show it to the recruiter. It's on my to-do list though.
         
         //      CUENTA DE ALEXMAXU
-        //      let headers = [
-        //          "X-RapidAPI-Key": "6313d80101mshcf7534d37d3d405p171bf2jsn2509c89a5d1d",
-        //          "X-RapidAPI-Host": "work-out-api1.p.rapidapi.com"
-        //      ]
+              let headers = [
+                  "X-RapidAPI-Key": "6313d80101mshcf7534d37d3d405p171bf2jsn2509c89a5d1d",
+                  "X-RapidAPI-Host": "work-out-api1.p.rapidapi.com"
+              ]
         
         //      CUENTA DE ALEXHHANWAYY
         //      let headers = [
@@ -66,10 +66,10 @@ extension URLRequest {
         //            "x-rapidapi-host": "work-out-api1.p.rapidapi.com"
         //        ]
         //        CUENTA yas
-        let headers = [
-            "x-rapidapi-key": "21a2f574c4msh3aeb48e3fbc40e4p15b96ajsn5dff1d0c59a3",
-            "x-rapidapi-host": "work-out-api1.p.rapidapi.com"
-        ]
+//        let headers = [
+//            "x-rapidapi-key": "21a2f574c4msh3aeb48e3fbc40e4p15b96ajsn5dff1d0c59a3",
+//            "x-rapidapi-host": "work-out-api1.p.rapidapi.com"
+//        ]
         
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers

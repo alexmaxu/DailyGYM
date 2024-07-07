@@ -66,6 +66,7 @@ final class MainViewVM: ObservableObject {
     func getAllExercises() async {
         do {
             let exercisesResults = try await exerciseInteractor.fetchExercises(muscle: muscleTofind)
+            print("get all exercises MainVM")
             await MainActor.run {
                 self.exercises = exercisesResults
             }
