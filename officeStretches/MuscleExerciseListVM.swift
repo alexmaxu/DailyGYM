@@ -6,7 +6,7 @@
 //
 
 import Foundation
-final class MuscleExerciseListVM: ObservableObject {
+final class MuscleExerciseListVMTOREMOVE: ObservableObject {
     
     let exerciseInteractor: ExerciseInteractorProtocol
     

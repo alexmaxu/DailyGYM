@@ -10,11 +10,7 @@ import SwiftUI
 struct CreateYourRoutineView: View {
     @Environment(\.dismiss) var dismiss
     
-    // Tiene los datos generales de la app del ContentView
     @EnvironmentObject var vm: MainViewVM
-    
-    // Este view Model se encarga de cargar los ejercicios
-    @ObservedObject var muscleExerciseListVM = MuscleExerciseListVM()
     
     @State var titleRoutine: String = ""
     
@@ -23,7 +19,7 @@ struct CreateYourRoutineView: View {
             Text("Routine's name:")
             TextField("Title", text: $titleRoutine)
                 .textFieldStyle(.roundedBorder)
-//            ResumeExerciseRoutineList(routineExercises: $muscleExerciseListVM.myExervisListToSave)
+            ResumeExerciseRoutineList(routineExercises: $vm.myExervisListToSave)
                 .frame(height: 200)
             Text("Exercises:")
                 .font(.title3)
@@ -32,7 +28,7 @@ struct CreateYourRoutineView: View {
                 VStack {
                     ForEach(Muscles.allCases.dropLast()) { muscle in
                         DisclosureGroup {
-                            ForEach(muscleExerciseListVM.exerciseDictionary[muscle] ?? []) { exercise in
+                            ForEach(vm.exerciseDictionary[muscle] ?? []) { exercise in
                                 HStack {
                                     Text(exercise.workOut)
                                     Spacer()
@@ -42,7 +38,7 @@ struct CreateYourRoutineView: View {
                                         .frame(width: 120, height: 60)
                                         .clipShape(RoundedRectangle(cornerRadius: 10))
                                     Button {
-                                        muscleExerciseListVM.myExervisListToSave.append(exercise)
+                                        vm.myExervisListToSave.append(exercise)
                                         print("le doy al botn")
                                     } label: {
                                         Text("Add")
@@ -58,7 +54,6 @@ struct CreateYourRoutineView: View {
                                 .gradientBackground(opacity1: 0.1, opacity2: 0.4)
                                 .clipShape(RoundedRectangle(cornerRadius: 20))
                         }
-                        
                     }
                 }
                 .frame(maxWidth: .infinity)
@@ -70,8 +65,8 @@ struct CreateYourRoutineView: View {
         .toolbar {
             ToolbarItem (placement: .automatic) {
                 Button {
-                    if !muscleExerciseListVM.myExervisListToSave.isEmpty {
-                        vm.addToMyExercises(titleRoutine: titleRoutine, routine: muscleExerciseListVM.myExervisListToSave)
+                    if !vm.myExervisListToSave.isEmpty {
+                        vm.addToMyExercises(titleRoutine: titleRoutine, routine: vm.myExervisListToSave)
                         dismiss()
                     } else {
                        // crear una pantallita de alerta.

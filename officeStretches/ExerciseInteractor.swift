@@ -13,6 +13,9 @@ protocol ExerciseInteractorProtocol {
     
     func loadMyExercises() throws -> [MyExerciseModel]
     func saveMyExercises(myExercises: [MyExerciseModel]) throws
+    
+    func loadHistory() throws -> [HistoryModel]
+    func saveHistory(history: [HistoryModel]) throws
 }
 
 struct ExerciseInteractor: NetworkInteractor, ExerciseInteractorProtocol {
@@ -46,6 +49,19 @@ struct ExerciseInteractor: NetworkInteractor, ExerciseInteractorProtocol {
         try data.write(to: URL.documentsDirectory.appending(path: "MyExercises.json"), options: .atomic)
     }
     
+    func loadHistory() throws -> [HistoryModel] {
+        if FileManager.default.fileExists(atPath: URL.documentsDirectory.appending(path: "History.json").path()) {
+            let data = try Data(contentsOf: URL.documentsDirectory.appending(path: "History.json"))
+            return try JSONDecoder().decode([HistoryModel].self, from: data)
+        } else {
+            return []
+        }
+    }
+    
+    func saveHistory(history: [HistoryModel]) throws {
+        let data = try JSONEncoder().encode(history)
+        try data.write(to: URL.documentsDirectory.appending(path: "History.json"), options: .atomic)
+    }
 }
 
 

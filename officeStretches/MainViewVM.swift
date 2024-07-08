@@ -11,13 +11,10 @@ final class MainViewVM: ObservableObject {
     
     let exerciseInteractor: ExerciseInteractorProtocol
     
-    
-    
-    
     @Published var searchText: String = ""
     
     var exerciseDictionary: [Muscles:[Exercise]] = [:]
-    
+    @Published var myExervisListToSave: [Exercise] = []
     
     
     
@@ -30,13 +27,18 @@ final class MainViewVM: ObservableObject {
     
     @Published var exercises: [Exercise] = []
 
-    @Published var history: [HistoryModel] = []
+    @Published var history: [HistoryModel] = [] {
+        didSet {
+            saveHistory()
+        }
+    }
     
     var muscleTofind: Muscles = .All
     
     init(exerciseInteractor: ExerciseInteractorProtocol = ExerciseInteractor.shared ) {
         self.exerciseInteractor = exerciseInteractor
         getMyExercises()
+        loadHistory()
         Task {
             await getAllExercises()
             await getRandomRoutine()
@@ -48,6 +50,22 @@ final class MainViewVM: ObservableObject {
                     exerciseDictionary[exercise.muscles]?.append(exercise)
                 }
             }
+        }
+    }
+    
+    func loadHistory() {
+        do {
+            self.history = try exerciseInteractor.loadHistory()
+        } catch {
+            print(error)
+        }
+    }
+    
+    func saveHistory() {
+        do {
+            try exerciseInteractor.saveHistory(history: history)
+        } catch {
+            print(error)
         }
     }
     

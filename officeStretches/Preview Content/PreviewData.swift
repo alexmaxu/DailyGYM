@@ -8,6 +8,14 @@
 import Foundation
 
 struct PreviewExerciseInteractor: ExerciseInteractorProtocol {
+    func loadHistory() throws -> [HistoryModel] {
+        []
+    }
+    
+    func saveHistory(history: [HistoryModel]) throws {
+        
+    }
+    
     func loadMyExercises() throws -> [MyExerciseModel] {
         []
     }
@@ -208,6 +216,14 @@ extension MyExerciseModel {
 }
 
 struct ExerciseInteractorProtocolPreview: ExerciseInteractorProtocol {
+    func loadHistory() throws -> [HistoryModel] {
+        []
+    }
+    
+    func saveHistory(history: [HistoryModel]) throws {
+        
+    }
+    
     func loadMyExercises() throws -> [MyExerciseModel] {
         return [MyExerciseModel(title: "hola", description: "deshola", routine: [])]
     }
