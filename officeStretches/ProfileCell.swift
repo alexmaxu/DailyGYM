@@ -24,7 +24,7 @@ struct ProfileCell: View {
                 }
                 .padding()
                 Spacer()
-                Image(.mapache)
+                Image(profile.image.rawValue)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 70)

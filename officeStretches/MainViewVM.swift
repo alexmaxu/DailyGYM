@@ -92,7 +92,7 @@ final class MainViewVM: ObservableObject {
         formatter.dateFormat = "MM/dd/yyyy"
         let dateFormatted = formatter.string(from: today)
         let historyToAdd = HistoryModel(title: title, date: dateFormatted, exercises: exercises)
-        history.append(historyToAdd)
+        history.insert(historyToAdd, at: 0)
     }
     
     func addToMyExercises(titleRoutine: String, routine: [Exercise]) {
@@ -112,6 +112,10 @@ final class MainViewVM: ObservableObject {
     }
     
     func getRandomRoutine() async {
+//      if need to test an image from daily routine
+//        await MainActor.run {
+//            dailyRoutine.append(Exercise(muscles: .Glutes, workOut: "", intensityLevel: .beginner, beginnerSets: .the3SetsWith12To15Reps, intermediateSets: .the4SetsWith8To12Reps, expertSets: .the5SetsWith3To10Reps, equipment: "", explaination: "", longExplanation: "", video: ""))
+//        }
         if !exercises.isEmpty {
             let maxNumberExercises = exercises.count
             await MainActor.run {

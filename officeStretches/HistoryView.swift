@@ -10,17 +10,31 @@ import SwiftUI
 struct HistoryView: View {
     @Binding var history: [HistoryModel]
     var body: some View {
-        Text("History:")
-            .padding(.top)
-        List {
-            ForEach(history) { history in
-                Section("\(history.date)") {
-                    DisclosureGroup {
-                        ForEach(history.exercises) { exercise in
-                            Text(exercise.workOut)
+        VStack {
+            HStack {
+                Spacer()
+                Text("History")
+                    .padding(.top)
+                    .bold()
+                Spacer()
+//                Button {
+//                    history.removeAll()
+//                } label: {
+//                    Text("Remove")
+//                        .padding(.top)
+//                }
+
+            }
+            List {
+                ForEach(history) { history in
+                    Section("\(history.date)") {
+                        DisclosureGroup {
+                            ForEach(history.exercises) { exercise in
+                                Text(exercise.workOut)
+                            }
+                        } label: {
+                            Text(history.title)
                         }
-                    } label: {
-                        Text(history.title)
                     }
                 }
             }

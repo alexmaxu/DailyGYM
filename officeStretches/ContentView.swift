@@ -13,7 +13,6 @@ struct ContentView: View {
     @EnvironmentObject var vm: MainViewVM
     
     @State var showSheet: Bool = false
-    
     @State var showCreateRoutine: Bool = false
     
     var body: some View {
@@ -49,9 +48,6 @@ struct ContentView: View {
             })
             .navigationDestination(isPresented: $showCreateRoutine, destination: {
                 CreateYourRoutineView()
-                    .onAppear {
-                        print("hola")
-                    }
             })
             .sheet(isPresented: $showSheet, content: {
                 HistoryView(history: $vm.history)
