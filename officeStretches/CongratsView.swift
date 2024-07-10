@@ -39,6 +39,7 @@ struct CongratsView: View {
                 Spacer()
                 Button(action: {
                     profileVM.profile.lvl += 1
+                    profileVM.saveProfile()
                     vm.addToHistory(title: title, exercises: exercises)
                     dismiss()
                 }, label: {

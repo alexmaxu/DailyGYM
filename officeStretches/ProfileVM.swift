@@ -8,12 +8,7 @@
 import Foundation
 
 final class ProfileVM: ObservableObject {
-    @Published var profile = Profile() {
-        didSet {
-            saveProfile()
-        }
-    }
-    
+    @Published var profile = Profile()
     
     let profileInteractor: profileInteractorProtocol
     
