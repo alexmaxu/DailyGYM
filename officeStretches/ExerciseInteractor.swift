@@ -16,6 +16,12 @@ protocol ExerciseInteractorProtocol {
     
     func loadHistory() throws -> [HistoryModel]
     func saveHistory(history: [HistoryModel]) throws
+    
+    func saveDate(date: Date) throws
+    func loadDay() throws -> Date
+    
+    func saveDalyRoutine(dailyRoutine: [Exercise]) throws
+    func loadDailyRoutine() throws -> [Exercise]
 }
 
 struct ExerciseInteractor: NetworkInteractor, ExerciseInteractorProtocol {
@@ -25,6 +31,34 @@ struct ExerciseInteractor: NetworkInteractor, ExerciseInteractorProtocol {
     
     private init(session: URLSession = .shared) {
         self.session = session
+    }
+    
+    func saveDalyRoutine(dailyRoutine: [Exercise]) throws {
+        let data = try JSONEncoder().encode(dailyRoutine)
+        try data.write(to: URL.documentsDirectory.appending(path: "DailyRoutine.json"), options: .atomic)
+    }
+    
+    func loadDailyRoutine() throws -> [Exercise] {
+        if FileManager.default.fileExists(atPath: URL.documentsDirectory.appending(path: "DailyRoutine.json").path()) {
+            let data = try Data(contentsOf: URL.documentsDirectory.appending(path: "DailyRoutine.json"))
+            return try JSONDecoder().decode([Exercise].self, from: data)
+        } else {
+            return []
+        }
+    }
+    
+    func saveDate(date: Date) throws {
+        let data = try JSONEncoder().encode(date)
+        try data.write(to: URL.documentsDirectory.appending(path: "Date.json"), options: .atomic)
+    }
+    
+    func loadDay() throws -> Date {
+        if FileManager.default.fileExists(atPath: URL.documentsDirectory.appending(path: "Date.json").path()) {
+            let data = try Data(contentsOf: URL.documentsDirectory.appending(path: "Date.json"))
+            return try JSONDecoder().decode(Date.self, from: data)
+        } else {
+            return Date.now
+        }
     }
     
     func fetchExercises(muscle: Muscles) async throws -> [Exercise] {

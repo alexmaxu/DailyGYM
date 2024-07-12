@@ -8,6 +8,22 @@
 import Foundation
 
 struct PreviewExerciseInteractor: ExerciseInteractorProtocol {
+    func saveDalyRoutine(dailyRoutine: [Exercise]) throws {
+        
+    }
+    
+    func loadDailyRoutine() throws -> [Exercise] {
+        []
+    }
+    
+    func saveDate(date: Date) throws {
+        
+    }
+    
+    func loadDay() throws -> Date {
+        Date.now
+    }
+    
     func loadHistory() throws -> [HistoryModel] {
         []
     }
@@ -216,6 +232,22 @@ extension MyExerciseModel {
 }
 
 struct ExerciseInteractorProtocolPreview: ExerciseInteractorProtocol {
+    func saveDalyRoutine(dailyRoutine: [Exercise]) throws {
+        
+    }
+    
+    func loadDailyRoutine() throws -> [Exercise] {
+        []
+    }
+    
+    func saveDate(date: Date) throws {
+        
+    }
+    
+    func loadDay() throws -> Date {
+        Date.now
+    }
+    
     func loadHistory() throws -> [HistoryModel] {
         []
     }

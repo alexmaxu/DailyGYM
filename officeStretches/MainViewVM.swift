@@ -16,8 +16,6 @@ final class MainViewVM: ObservableObject {
     var exerciseDictionary: [Muscles:[Exercise]] = [:]
     @Published var myExervisListToSave: [Exercise] = []
     
-    
-    
     @Published var dailyRoutine: [Exercise] = []
     @Published var myExercises: [MyExerciseModel] = [] {
         didSet {
@@ -34,15 +32,25 @@ final class MainViewVM: ObservableObject {
     }
     
     var muscleTofind: Muscles = .All
+    var newToday: Date = Date.now
     
     init(exerciseInteractor: ExerciseInteractorProtocol = ExerciseInteractor.shared ) {
         self.exerciseInteractor = exerciseInteractor
         getMyExercises()
         loadHistory()
+        
         Task {
             await getAllExercises()
-            await getRandomRoutine()
-            
+            if isSameDay() {
+                loadDailyRoutine()
+                if dailyRoutine.isEmpty {
+                    await getRandomRoutine()
+                }
+                saveDailyRoutine()
+            } else {
+                await getRandomRoutine()
+                saveDailyRoutine()
+            }
             for exercise in exercises {
                 if exerciseDictionary[exercise.muscles] == nil {
                     exerciseDictionary[exercise.muscles] = [exercise]
@@ -50,7 +58,69 @@ final class MainViewVM: ObservableObject {
                     exerciseDictionary[exercise.muscles]?.append(exercise)
                 }
             }
+            saveDate()
         }
+    }
+    
+    func loadDailyRoutine() {
+        do {
+            self.dailyRoutine = try exerciseInteractor.loadDailyRoutine()
+        } catch {
+            print(error)
+        }
+    }
+    
+    func saveDailyRoutine() {
+        do {
+            try exerciseInteractor.saveDalyRoutine(dailyRoutine: dailyRoutine)
+        } catch {
+            print(error)
+        }
+    }
+    
+    func isSameDay() -> Bool {
+        let lastDay = loadDate()
+        let calendar = Calendar.current
+        
+        let lastDayCalendar = calendar.dateComponents([.day, .month, .year], from: lastDay)
+        print(lastDayCalendar)
+        
+        let newTodayCalendar = calendar.dateComponents([.day, .month, .year], from: newToday)
+        print(newTodayCalendar)
+        
+        if lastDayCalendar == newTodayCalendar {
+            print("Is same day")
+            return true
+        } else {
+            print("No")
+            return false
+        }
+    }
+    
+    func loadDate() -> Date {
+        do {
+            return try exerciseInteractor.loadDay()
+        } catch {
+            print(error)
+            return Date.now
+        }
+    }
+    
+    func saveDate() {
+        do {
+            try exerciseInteractor.saveDate(date: Date.now)
+        } catch {
+            print(error)
+        }
+    }
+    
+    func addToHistory(title: String, exercises: [Exercise]) {
+        let today = Date.now
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        let dateFormatted = formatter.string(from: today)
+        let historyToAdd = HistoryModel(title: title, date: dateFormatted, exercises: exercises)
+        history.insert(historyToAdd, at: 0)
     }
     
     func loadHistory() {
@@ -85,16 +155,6 @@ final class MainViewVM: ObservableObject {
         }
     }
     
-    
-    func addToHistory(title: String, exercises: [Exercise]) {
-        let today = Date.now
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MM/dd/yyyy"
-        let dateFormatted = formatter.string(from: today)
-        let historyToAdd = HistoryModel(title: title, date: dateFormatted, exercises: exercises)
-        history.insert(historyToAdd, at: 0)
-    }
-    
     func addToMyExercises(titleRoutine: String, routine: [Exercise]) {
         myExercises.append(MyExerciseModel(title: titleRoutine, routine: routine))
     }
@@ -112,7 +172,7 @@ final class MainViewVM: ObservableObject {
     }
     
     func getRandomRoutine() async {
-//      if need to test an image from daily routine
+///      if need to test an image from daily routine
 //        await MainActor.run {
 //            dailyRoutine.append(Exercise(muscles: .Glutes, workOut: "", intensityLevel: .beginner, beginnerSets: .the3SetsWith12To15Reps, intermediateSets: .the4SetsWith8To12Reps, expertSets: .the5SetsWith3To10Reps, equipment: "", explaination: "", longExplanation: "", video: ""))
 //        }
