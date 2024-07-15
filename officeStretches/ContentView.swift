@@ -30,6 +30,9 @@ struct ContentView: View {
                         showSheet.toggle()
                     }
             }
+            .overlay(content: {
+                LoadingView()
+            })
             .navigationDestination(for: Profile.self, destination: { profile in
                 ProfileSettingsView()
             })
