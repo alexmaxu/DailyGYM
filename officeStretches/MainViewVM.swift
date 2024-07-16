@@ -11,8 +11,6 @@ final class MainViewVM: ObservableObject {
     
     let exerciseInteractor: ExerciseInteractorProtocol
     
-    @Published var searchText: String = ""
-    
     var exerciseDictionary: [Muscles:[Exercise]] = [:]
     @Published var myExervisListToSave: [Exercise] = []
     
@@ -33,6 +31,7 @@ final class MainViewVM: ObservableObject {
     
     var muscleTofind: Muscles = .All
     var newToday: Date = Date.now
+    @Published var isLoading = true
     
     init(exerciseInteractor: ExerciseInteractorProtocol = ExerciseInteractor.shared ) {
         self.exerciseInteractor = exerciseInteractor
@@ -51,6 +50,10 @@ final class MainViewVM: ObservableObject {
                 await getRandomRoutine()
                 saveDailyRoutine()
             }
+            await MainActor.run {
+                isLoading.toggle()
+            }
+            
             for exercise in exercises {
                 if exerciseDictionary[exercise.muscles] == nil {
                     exerciseDictionary[exercise.muscles] = [exercise]

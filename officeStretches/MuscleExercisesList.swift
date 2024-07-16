@@ -24,7 +24,6 @@ struct MuscleExercisesList: View {
                     }
                 }
             }
-            .searchable(text: $vm.searchText, prompt: "Search")
             .gradientBackground(opacity1: 0.1, opacity2: 0.5)
         }
 }

@@ -31,7 +31,7 @@ struct ContentView: View {
                     }
             }
             .overlay(content: {
-                LoadingView()
+                LoadingView().opacity(vm.isLoading ? 1 : 0)
             })
             .navigationDestination(for: Profile.self, destination: { profile in
                 ProfileSettingsView()

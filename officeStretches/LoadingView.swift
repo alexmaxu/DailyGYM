@@ -14,20 +14,25 @@ struct LoadingView: View {
         "A little bit of exercise each day makes a big difference. Be consistent, stay active, and take care of your health for a brighter future!"
                             ]
     var body: some View {
-        VStack {
-            Image("StepUp")
-                .resizable()
-                .scaledToFit()
-                .clipShape(Circle())
-                .padding()
-            Text(textIntro.randomElement() ?? "")
-                .padding()
-            ProgressView()
-                .controlSize(.extraLarge)
-                .padding()
+        ZStack {
+            VStack {
+                Image("StepUp")
+                    .resizable()
+                    .scaledToFit()
+                    .clipShape(Circle())
+                    .padding()
+                Text(textIntro.randomElement() ?? "")
+                    .padding()
+                ProgressView()
+                    .controlSize(.extraLarge)
+                    .padding()
+            }
+            .frame(maxHeight: .infinity)
+            .gradientBackground(opacity1: 0.1, opacity2: 0.9)
+            .background {
+                Color.white
+            }
         }
-        .frame(maxHeight: .infinity)
-        .gradientBackground(opacity1: 1, opacity2: 1)
     }
 }
 
