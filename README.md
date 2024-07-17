@@ -10,6 +10,19 @@ Many of us spend long hours in front of screens. DailyGYM aims to simplify fitne
 
 DailyGYM is a fitness app designed for iOS to help users maintain an active lifestyle conveniently from their devices. Whether you're a beginner or a seasoned fitness enthusiast, DailyGYM provides tailored daily exercise routines to fit your skill level and personal goals.
 
+![MainView](https://github.com/user-attachments/assets/6cc5147c-77c3-4e73-86fd-4e95da69a487) ![DailyRoutine](https://github.com/user-attachments/assets/36bf1ab6-43ca-42b1-83a3-2a45cbe449d4) ![ExerciseDaily](https://github.com/user-attachments/assets/a5ddd02d-3363-4b4e-b0e5-df9fc9dba1c5) ![Congrats](https://github.com/user-attachments/assets/c234dcf3-baf0-4afa-930f-0e09a37c7796) ![NewRoutine](https://github.com/user-attachments/assets/e46c0c61-79b4-4ac7-9f26-6abb954bdc53) ![History](https://github.com/user-attachments/assets/b5ae3110-e9e9-4e6b-bb09-0cb7c0d01789) ![Profile](https://github.com/user-attachments/assets/90feb534-00b5-427d-af02-b84eb84a8929)
+
+
+
+
+
+
+
+
+
+
+
+
 ## Features
 
 - **Daily Routines:** Automatically generated daily exercise routines based on your skills and preferences.
