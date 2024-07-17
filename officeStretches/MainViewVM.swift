@@ -37,7 +37,6 @@ final class MainViewVM: ObservableObject {
         self.exerciseInteractor = exerciseInteractor
         getMyExercises()
         loadHistory()
-        
         Task {
             await getAllExercises()
             if isSameDay() {
@@ -53,15 +52,18 @@ final class MainViewVM: ObservableObject {
             await MainActor.run {
                 isLoading.toggle()
             }
-            
-            for exercise in exercises {
-                if exerciseDictionary[exercise.muscles] == nil {
-                    exerciseDictionary[exercise.muscles] = [exercise]
-                } else {
-                    exerciseDictionary[exercise.muscles]?.append(exercise)
-                }
-            }
+            separateByMuscle()
             saveDate()
+        }
+    }
+    
+    func separateByMuscle() {
+        for exercise in exercises {
+            if exerciseDictionary[exercise.muscles] == nil {
+                exerciseDictionary[exercise.muscles] = [exercise]
+            } else {
+                exerciseDictionary[exercise.muscles]?.append(exercise)
+            }
         }
     }
     

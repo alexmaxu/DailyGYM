@@ -58,6 +58,8 @@
 		5FC4870F2C0DA583009B9A0A /* MyExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC4870E2C0DA583009B9A0A /* MyExerciseModel.swift */; };
 		5FC9AFF02C392A5200B64261 /* ExerciseRoutineText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9AFEF2C392A5200B64261 /* ExerciseRoutineText.swift */; };
 		5FCE64072C085CFF001B4E91 /* ExerciseRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCE64062C085CFF001B4E91 /* ExerciseRoutine.swift */; };
+		5FD3DEE12C480FC200B0E2CF /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD3DEE02C480FC200B0E2CF /* AppConfig.swift */; };
+		5FD3DEE42C48130E00B0E2CF /* configAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FD3DEE32C48130E00B0E2CF /* configAPI.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +115,8 @@
 		5FC4870E2C0DA583009B9A0A /* MyExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExerciseModel.swift; sourceTree = "<group>"; };
 		5FC9AFEF2C392A5200B64261 /* ExerciseRoutineText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRoutineText.swift; sourceTree = "<group>"; };
 		5FCE64062C085CFF001B4E91 /* ExerciseRoutine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRoutine.swift; sourceTree = "<group>"; };
+		5FD3DEE02C480FC200B0E2CF /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		5FD3DEE32C48130E00B0E2CF /* configAPI.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = configAPI.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,7 @@
 				5FC108D52BFDFC5A004B33FE /* VM */,
 				5FC108D22BFDDA48004B33FE /* Interactor */,
 				5FAA3C922BFD3C4000D4297F /* Interface */,
+				5FD3DEE22C480FD300B0E2CF /* Api Key */,
 				5FAA3C8F2BFD3A6C00D4297F /* Model */,
 				5F6ECDCD2BFB20A60020644D /* Assets.xcassets */,
 				5F6ECDCF2BFB20A60020644D /* Preview Content */,
@@ -280,6 +285,15 @@
 			name = VM;
 			sourceTree = "<group>";
 		};
+		5FD3DEE22C480FD300B0E2CF /* Api Key */ = {
+			isa = PBXGroup;
+			children = (
+				5FD3DEE32C48130E00B0E2CF /* configAPI.plist */,
+				5FD3DEE02C480FC200B0E2CF /* AppConfig.swift */,
+			);
+			name = "Api Key";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -339,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F6ECDD12BFB20A60020644D /* Preview Assets.xcassets in Resources */,
+				5FD3DEE42C48130E00B0E2CF /* configAPI.plist in Resources */,
 				5F6ECDCE2BFB20A60020644D /* Assets.xcassets in Resources */,
 				5FC108DB2BFE02DE004B33FE /* ExerciseList.json in Resources */,
 			);
@@ -396,6 +411,7 @@
 				5F22DCB62C1AD0C1003028D2 /* ReadyLabel.swift in Sources */,
 				5FAA3C912BFD3A9D00D4297F /* ExerciseModel.swift in Sources */,
 				5FC108D72BFDFCA0004B33FE /* MainViewVM.swift in Sources */,
+				5FD3DEE12C480FC200B0E2CF /* AppConfig.swift in Sources */,
 				5F3409EC2C0EFD3F009725F7 /* YouTubeNavigator.swift in Sources */,
 				5F1C94D22C050673009F1B65 /* ProfileVM.swift in Sources */,
 				5F6ECDCA2BFB20A50020644D /* officeStretchesApp.swift in Sources */,

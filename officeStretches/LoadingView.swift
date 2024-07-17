@@ -28,7 +28,7 @@ struct LoadingView: View {
                     .padding()
             }
             .frame(maxHeight: .infinity)
-            .gradientBackground(opacity1: 0.1, opacity2: 0.9)
+            .gradientBackground(opacity1: 0.1, opacity2: 0.5)
             .background {
                 Color.white
             }
