@@ -40,7 +40,7 @@ final class MainViewVM: ObservableObject {
         Task {
             await getAllExercises()
             if isSameDay() {
-                loadDailyRoutine()
+                await loadDailyRoutine()
                 if dailyRoutine.isEmpty {
                     await getRandomRoutine()
                 }
@@ -52,24 +52,29 @@ final class MainViewVM: ObservableObject {
             await MainActor.run {
                 isLoading.toggle()
             }
-            separateByMuscle()
+            await separateByMuscle()
             saveDate()
         }
     }
     
-    func separateByMuscle() {
-        for exercise in exercises {
-            if exerciseDictionary[exercise.muscles] == nil {
-                exerciseDictionary[exercise.muscles] = [exercise]
-            } else {
-                exerciseDictionary[exercise.muscles]?.append(exercise)
+    func separateByMuscle() async {
+        await MainActor.run {
+            for exercise in exercises {
+                if exerciseDictionary[exercise.muscles] == nil {
+                    exerciseDictionary[exercise.muscles] = [exercise]
+                } else {
+                    exerciseDictionary[exercise.muscles]?.append(exercise)
+                }
             }
         }
     }
     
-    func loadDailyRoutine() {
+    func loadDailyRoutine() async {
         do {
-            self.dailyRoutine = try exerciseInteractor.loadDailyRoutine()
+            let routine = try exerciseInteractor.loadDailyRoutine()
+            await MainActor.run {
+                self.dailyRoutine = routine
+            }
         } catch {
             print(error)
         }
