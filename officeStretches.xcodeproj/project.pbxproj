@@ -57,10 +57,21 @@
 		5FC108DD2BFE04E4004B33FE /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC108DC2BFE04E4004B33FE /* PreviewData.swift */; };
 		5FC4870F2C0DA583009B9A0A /* MyExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC4870E2C0DA583009B9A0A /* MyExerciseModel.swift */; };
 		5FC9AFF02C392A5200B64261 /* ExerciseRoutineText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9AFEF2C392A5200B64261 /* ExerciseRoutineText.swift */; };
+		5FCA80292C590AB500EA0D8C /* officeStretchesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCA80282C590AB500EA0D8C /* officeStretchesTests.swift */; };
 		5FCE64072C085CFF001B4E91 /* ExerciseRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCE64062C085CFF001B4E91 /* ExerciseRoutine.swift */; };
 		5FD3DEE12C480FC200B0E2CF /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD3DEE02C480FC200B0E2CF /* AppConfig.swift */; };
 		5FD3DEE42C48130E00B0E2CF /* configAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FD3DEE32C48130E00B0E2CF /* configAPI.plist */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5FCA802A2C590AB500EA0D8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F6ECDBE2BFB20A50020644D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F6ECDC52BFB20A50020644D;
+			remoteInfo = officeStretches;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5F09CDB12C04616D000F6E49 /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
@@ -114,6 +125,8 @@
 		5FC108DC2BFE04E4004B33FE /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		5FC4870E2C0DA583009B9A0A /* MyExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExerciseModel.swift; sourceTree = "<group>"; };
 		5FC9AFEF2C392A5200B64261 /* ExerciseRoutineText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRoutineText.swift; sourceTree = "<group>"; };
+		5FCA80262C590AB500EA0D8C /* officeStretchesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = officeStretchesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FCA80282C590AB500EA0D8C /* officeStretchesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = officeStretchesTests.swift; sourceTree = "<group>"; };
 		5FCE64062C085CFF001B4E91 /* ExerciseRoutine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRoutine.swift; sourceTree = "<group>"; };
 		5FD3DEE02C480FC200B0E2CF /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		5FD3DEE32C48130E00B0E2CF /* configAPI.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = configAPI.plist; sourceTree = "<group>"; };
@@ -121,6 +134,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		5F6ECDC32BFB20A50020644D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FCA80232C590AB500EA0D8C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -144,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				5F6ECDC82BFB20A50020644D /* officeStretches */,
+				5FCA80272C590AB500EA0D8C /* officeStretchesTests */,
 				5F6ECDC72BFB20A50020644D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -152,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				5F6ECDC62BFB20A50020644D /* officeStretches.app */,
+				5FCA80262C590AB500EA0D8C /* officeStretchesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -285,6 +307,14 @@
 			name = VM;
 			sourceTree = "<group>";
 		};
+		5FCA80272C590AB500EA0D8C /* officeStretchesTests */ = {
+			isa = PBXGroup;
+			children = (
+				5FCA80282C590AB500EA0D8C /* officeStretchesTests.swift */,
+			);
+			path = officeStretchesTests;
+			sourceTree = "<group>";
+		};
 		5FD3DEE22C480FD300B0E2CF /* Api Key */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +344,24 @@
 			productReference = 5F6ECDC62BFB20A50020644D /* officeStretches.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5FCA80252C590AB500EA0D8C /* officeStretchesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FCA802E2C590AB500EA0D8C /* Build configuration list for PBXNativeTarget "officeStretchesTests" */;
+			buildPhases = (
+				5FCA80222C590AB500EA0D8C /* Sources */,
+				5FCA80232C590AB500EA0D8C /* Frameworks */,
+				5FCA80242C590AB500EA0D8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5FCA802B2C590AB500EA0D8C /* PBXTargetDependency */,
+			);
+			name = officeStretchesTests;
+			productName = officeStretchesTests;
+			productReference = 5FCA80262C590AB500EA0D8C /* officeStretchesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -326,6 +374,10 @@
 				TargetAttributes = {
 					5F6ECDC52BFB20A50020644D = {
 						CreatedOnToolsVersion = 15.4;
+					};
+					5FCA80252C590AB500EA0D8C = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 5F6ECDC52BFB20A50020644D;
 					};
 				};
 			};
@@ -343,6 +395,7 @@
 			projectRoot = "";
 			targets = (
 				5F6ECDC52BFB20A50020644D /* officeStretches */,
+				5FCA80252C590AB500EA0D8C /* officeStretchesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -356,6 +409,13 @@
 				5FD3DEE42C48130E00B0E2CF /* configAPI.plist in Resources */,
 				5F6ECDCE2BFB20A60020644D /* Assets.xcassets in Resources */,
 				5FC108DB2BFE02DE004B33FE /* ExerciseList.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FCA80242C590AB500EA0D8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,7 +478,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5FCA80222C590AB500EA0D8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FCA80292C590AB500EA0D8C /* officeStretchesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5FCA802B2C590AB500EA0D8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5F6ECDC52BFB20A50020644D /* officeStretches */;
+			targetProxy = 5FCA802A2C590AB500EA0D8C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5F6ECDD22BFB20A60020644D /* Debug */ = {
@@ -598,6 +674,42 @@
 			};
 			name = Release;
 		};
+		5FCA802C2C590AB500EA0D8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H88V46H93C;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.alexmaxu.officeStretchesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/officeStretches.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/officeStretches";
+			};
+			name = Debug;
+		};
+		5FCA802D2C590AB500EA0D8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H88V46H93C;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.alexmaxu.officeStretchesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/officeStretches.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/officeStretches";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -615,6 +727,15 @@
 			buildConfigurations = (
 				5F6ECDD52BFB20A60020644D /* Debug */,
 				5F6ECDD62BFB20A60020644D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5FCA802E2C590AB500EA0D8C /* Build configuration list for PBXNativeTarget "officeStretchesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FCA802C2C590AB500EA0D8C /* Debug */,
+				5FCA802D2C590AB500EA0D8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
