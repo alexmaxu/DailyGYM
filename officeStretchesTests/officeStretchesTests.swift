@@ -65,6 +65,7 @@ final class officeStretchesTests: XCTestCase {
         XCTAssertEqual(levelSets, profile.levelSets)
         XCTAssertEqual(lvl, profile.lvl)
         XCTAssertEqual(image, profile.image)
+
     }
     
     func testMyExerciseModel() {

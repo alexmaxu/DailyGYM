@@ -40,6 +40,7 @@
 		5F9628942C01C41B00C4DC98 /* MuscleExercisesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9628932C01C41B00C4DC98 /* MuscleExercisesList.swift */; };
 		5F9628962C01C44100C4DC98 /* MuscleExerciseListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9628952C01C44100C4DC98 /* MuscleExerciseListVM.swift */; };
 		5F9628982C01D88D00C4DC98 /* ExerciseListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9628972C01D88D00C4DC98 /* ExerciseListRow.swift */; };
+		5F96CB1A2C5CC22E00B1AD86 /* MainViewVMUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F96CB192C5CC22E00B1AD86 /* MainViewVMUnitTest.swift */; };
 		5FA2B7B22C19E82300757F83 /* CustomBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA2B7B12C19E82300757F83 /* CustomBackground.swift */; };
 		5FA2B7B42C19EBF800757F83 /* DetailExerciseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA2B7B32C19EBF800757F83 /* DetailExerciseInfo.swift */; };
 		5FA2B7B62C19FA3700757F83 /* CongratsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA2B7B52C19FA3700757F83 /* CongratsView.swift */; };
@@ -107,6 +108,7 @@
 		5F9628932C01C41B00C4DC98 /* MuscleExercisesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleExercisesList.swift; sourceTree = "<group>"; };
 		5F9628952C01C44100C4DC98 /* MuscleExerciseListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleExerciseListVM.swift; sourceTree = "<group>"; };
 		5F9628972C01D88D00C4DC98 /* ExerciseListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListRow.swift; sourceTree = "<group>"; };
+		5F96CB192C5CC22E00B1AD86 /* MainViewVMUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewVMUnitTest.swift; sourceTree = "<group>"; };
 		5FA2B7B12C19E82300757F83 /* CustomBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackground.swift; sourceTree = "<group>"; };
 		5FA2B7B32C19EBF800757F83 /* DetailExerciseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailExerciseInfo.swift; sourceTree = "<group>"; };
 		5FA2B7B52C19FA3700757F83 /* CongratsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsView.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				5FCA80282C590AB500EA0D8C /* officeStretchesTests.swift */,
+				5F96CB192C5CC22E00B1AD86 /* MainViewVMUnitTest.swift */,
 			);
 			path = officeStretchesTests;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F96CB1A2C5CC22E00B1AD86 /* MainViewVMUnitTest.swift in Sources */,
 				5FCA80292C590AB500EA0D8C /* officeStretchesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
