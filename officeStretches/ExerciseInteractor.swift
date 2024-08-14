@@ -93,8 +93,11 @@ struct ExerciseInteractor: NetworkInteractor, ExerciseInteractorProtocol {
     }
     
     func saveHistory(history: [HistoryModel]) throws {
-        let data = try JSONEncoder().encode(history)
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        let data = try encoder.encode(history)
         try data.write(to: URL.documentsDirectory.appending(path: "History.json"), options: .atomic)
+        print(URL.documentsDirectory.appending(path: "History.json"))
     }
 }
 

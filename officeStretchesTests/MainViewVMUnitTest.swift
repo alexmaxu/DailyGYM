@@ -21,20 +21,29 @@ final class MainViewVMUnitTest: XCTestCase {
     }
 
     func testAddToHistory() throws {
+        // Given
         let title = "History 1"
         let exercises = Exercise.previewExercisesList
-        let historyCountBefore = mainViewVM.history.count
-    
+        mainViewVM.history.removeAll()
+        
+        // When
         mainViewVM.addToHistory(title: title, exercises: exercises)
         
-        XCTAssertEqual(mainViewVM.history.count, historyCountBefore + 1)
+        // Then
+        XCTAssertEqual(mainViewVM.history.count, 1)
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testAddToMyExercises() throws {
+        // Given
+        let titleRoutine = "Title 1"
+        let routine = Exercise.previewExercisesList
+        let myExerciseCountBefore = mainViewVM.myExercises.count
+        
+        // When
+        mainViewVM.addToMyExercises(titleRoutine: titleRoutine, routine: routine)
+        
+        // Then
+        XCTAssertEqual(mainViewVM.myExercises.count, myExerciseCountBefore + 1)
     }
 
 }

@@ -6,14 +6,16 @@
 //
 
 import SwiftUI
+import TipKit
 
 struct ContentView: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var profileVM: ProfileVM
     @EnvironmentObject var vm: MainViewVM
-    
+
     @State var showSheet: Bool = false
     @State var showCreateRoutine: Bool = false
+    var test1 = "hola"
     
     var body: some View {
         NavigationStack {
@@ -59,7 +61,6 @@ struct ContentView: View {
         }
     }
 }
-
 
 #Preview {
     ContentView()
