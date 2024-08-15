@@ -44,6 +44,7 @@
 		5FA2B7B22C19E82300757F83 /* CustomBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA2B7B12C19E82300757F83 /* CustomBackground.swift */; };
 		5FA2B7B42C19EBF800757F83 /* DetailExerciseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA2B7B32C19EBF800757F83 /* DetailExerciseInfo.swift */; };
 		5FA2B7B62C19FA3700757F83 /* CongratsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA2B7B52C19FA3700757F83 /* CongratsView.swift */; };
+		5FA7B73A2C6E047E00527D09 /* StarterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA7B7392C6E047E00527D09 /* StarterView.swift */; };
 		5FAA3C8E2BFD2FD800D4297F /* ExerciseListScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA3C8D2BFD2FD800D4297F /* ExerciseListScrollView.swift */; };
 		5FAA3C912BFD3A9D00D4297F /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA3C902BFD3A9C00D4297F /* ExerciseModel.swift */; };
 		5FAA3C942BFD3C6D00D4297F /* NetworkInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA3C932BFD3C6D00D4297F /* NetworkInteractor.swift */; };
@@ -112,6 +113,7 @@
 		5FA2B7B12C19E82300757F83 /* CustomBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackground.swift; sourceTree = "<group>"; };
 		5FA2B7B32C19EBF800757F83 /* DetailExerciseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailExerciseInfo.swift; sourceTree = "<group>"; };
 		5FA2B7B52C19FA3700757F83 /* CongratsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsView.swift; sourceTree = "<group>"; };
+		5FA7B7392C6E047E00527D09 /* StarterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterView.swift; sourceTree = "<group>"; };
 		5FAA3C8D2BFD2FD800D4297F /* ExerciseListScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListScrollView.swift; sourceTree = "<group>"; };
 		5FAA3C902BFD3A9C00D4297F /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
 		5FAA3C932BFD3C6D00D4297F /* NetworkInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInteractor.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				5F3C4D662C13A714002969A6 /* CreateYourRoutineView.swift */,
 				5FA2B7B52C19FA3700757F83 /* CongratsView.swift */,
 				5F5FF7AC2C2558EA00462B5D /* HistoryView.swift */,
+				5FA7B7392C6E047E00527D09 /* StarterView.swift */,
 				5F6ECDD72BFB2EF00020644D /* Components */,
 			);
 			name = Views;
@@ -461,6 +464,7 @@
 				5F9628962C01C44100C4DC98 /* MuscleExerciseListVM.swift in Sources */,
 				5F7506D32C10DF3D003BEFA0 /* Enums.swift in Sources */,
 				5F1C94D02C04FF91009F1B65 /* ProfileModel.swift in Sources */,
+				5FA7B73A2C6E047E00527D09 /* StarterView.swift in Sources */,
 				5F1B4BE22C2166DE007666BD /* ResumeMyExerciseList.swift in Sources */,
 				5FA2B7B42C19EBF800757F83 /* DetailExerciseInfo.swift in Sources */,
 				5F1B4BE02C216345007666BD /* MyExerciseRoutine.swift in Sources */,

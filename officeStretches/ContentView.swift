@@ -15,7 +15,6 @@ struct ContentView: View {
 
     @State var showSheet: Bool = false
     @State var showCreateRoutine: Bool = false
-    var test1 = "hola"
     
     var body: some View {
         NavigationStack {
