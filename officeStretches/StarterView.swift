@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct StarterView: View {
+    @AppStorage("firstTime") var firstTime = true
     @EnvironmentObject var vmProfile: ProfileVM
+    
     var body: some View {
         VStack (alignment: .leading, spacing: 16) {
             Spacer()
@@ -45,8 +47,9 @@ struct StarterView: View {
                 Spacer()
                 Button {
                     vmProfile.saveProfile()
+                    firstTime.toggle()
                 } label: {
-                    DoneLabel(text: "Save")
+                    DoneLabel(text: "Done")
                 }
                 Spacer()
             }

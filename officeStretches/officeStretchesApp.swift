@@ -9,14 +9,21 @@ import SwiftUI
 
 @main
  struct officeStretchesApp: App {
+     @AppStorage("firstTime") var firstTime = true
      @StateObject var profileViewModel = ProfileVM()
      @StateObject var mainVM = MainViewVM()
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(profileViewModel)
-                .environmentObject(mainVM)
+            if firstTime {
+                StarterView()
+                    .environmentObject(profileViewModel)
+            } else {
+                ContentView()
+                    .environmentObject(profileViewModel)
+                    .environmentObject(mainVM)
+            }
+            
         }
     }
 }
