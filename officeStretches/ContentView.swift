@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import TipKit
 
 struct ContentView: View {
     @Environment(\.dismiss) var dismiss
@@ -16,20 +16,34 @@ struct ContentView: View {
     @State var showSheet: Bool = false
     @State var showCreateRoutine: Bool = false
     
+    let profileTip = ProfileTip()
+    let createRoutineTip = CreateNewRoutine()
+    
     var body: some View {
         NavigationStack {
             VStack {
                 ProfileCell(profile: $profileVM.profile)
+                    .onTapGesture {
+                        profileTip.invalidate(reason: .actionPerformed)
+                    }
+                    .popoverTip(profileTip)
                 Spacer()
                 DailyRoutineCard(dailyRoutine: vm.dailyRoutine)
                 Spacer()
                 ExerciseListScrollView()
                 Spacer()
                 MyStretches(arrayStretches: vm.myExercises, showCreateRoutine: $showCreateRoutine)
+                    .onTapGesture {
+                        Task { await CreateNewRoutine.createRoutineEvent.donate() }
+                    }
+                    .popoverTip(createRoutineTip)
                 TitleRow(title: "History", gradientOpacity: 0.7)
                     .onTapGesture {
                         showSheet.toggle()
                     }
+            }
+            .onAppear {
+                Task { await CreateNewRoutine.mainViewVisitedEvent.donate() }
             }
             .overlay(content: {
                 LoadingView().opacity(vm.isLoading ? 1 : 0)
@@ -65,4 +79,9 @@ struct ContentView: View {
     ContentView()
         .environmentObject(ProfileVM())
         .environmentObject(MainViewVM(exerciseInteractor: PreviewExerciseInteractor()))
+        .task {
+            try? Tips.resetDatastore()
+            try? Tips.configure([
+                .datastoreLocation(.applicationDefault)])
+        }
 }

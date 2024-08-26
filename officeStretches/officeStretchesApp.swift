@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TipKit
 
 @main
  struct officeStretchesApp: App {
@@ -22,6 +23,11 @@ import SwiftUI
                 ContentView()
                     .environmentObject(profileViewModel)
                     .environmentObject(mainVM)
+                    .task {
+//                        try? Tips.resetDatastore()
+                        try? Tips.configure([
+                            .datastoreLocation(.applicationDefault)])
+                    }
             }
             
         }
