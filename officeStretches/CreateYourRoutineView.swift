@@ -29,21 +29,24 @@ struct CreateYourRoutineView: View {
                     ForEach(Muscles.allCases.dropLast()) { muscle in
                         DisclosureGroup {
                             ForEach(vm.exerciseDictionary[muscle] ?? []) { exercise in
-                                HStack {
-                                    Text(exercise.workOut)
+                                Button {
+                                    vm.myExervisListToSave.append(exercise)
+                                    print("le doy al botn")
+                                } label: {
+                                    HStack {
+                                        Text(exercise.workOut)
+                                            .foregroundStyle(Color.black)
+                                    }
                                     Spacer()
                                     Image(exercise.muscles.rawValue)
                                         .resizable()
                                         .scaledToFill()
                                         .frame(width: 120, height: 60)
                                         .clipShape(RoundedRectangle(cornerRadius: 10))
-                                    Button {
-                                        vm.myExervisListToSave.append(exercise)
-                                        print("le doy al botn")
-                                    } label: {
-                                        Text("Add")
-                                    }
+                                    Image(systemName: "plus.circle")
+                                        .font(.title)
                                 }
+                                
                             }
                         } label: {
                             Text(muscle.rawValue)
@@ -69,7 +72,7 @@ struct CreateYourRoutineView: View {
                         vm.addToMyExercises(titleRoutine: titleRoutine, routine: vm.myExervisListToSave)
                         dismiss()
                     } else {
-                       // crear una pantallita de alerta.
+                        // crear una pantallita de alerta.
                     }
                     
                 } label: {

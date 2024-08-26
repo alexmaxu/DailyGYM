@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import TipKit
+
 
 struct ContentView: View {
     @Environment(\.dismiss) var dismiss

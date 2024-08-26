@@ -24,7 +24,7 @@ struct MyStretches: View {
                         }
                 }
             }
-            MyStretchesCard(title: "Add new +")
+            MyStretchesCard(title: "Add new routine")
                 .onTapGesture {
                     showCreateRoutine.toggle()
                 }
