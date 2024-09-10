@@ -8,7 +8,7 @@
 import Foundation
 
 struct Profile: Hashable, Codable {
-    var name: String = "Enter your NAME"
+    var name: String = ""
     var levelSets: CaseSets = .beginner
     var lvl: Int = 0
     var image: ProfileImage = .mapache

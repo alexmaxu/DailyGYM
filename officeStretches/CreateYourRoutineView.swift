@@ -13,6 +13,7 @@ struct CreateYourRoutineView: View {
     @EnvironmentObject var vm: MainViewVM
     
     @State var titleRoutine: String = ""
+    @State var showAlert = false
     
     var body: some View {
         VStack {
@@ -31,7 +32,6 @@ struct CreateYourRoutineView: View {
                             ForEach(vm.exerciseDictionary[muscle] ?? []) { exercise in
                                 Button {
                                     vm.myExervisListToSave.append(exercise)
-                                    print("le doy al botn")
                                 } label: {
                                     HStack {
                                         Text(exercise.workOut)
@@ -64,6 +64,9 @@ struct CreateYourRoutineView: View {
             .scrollIndicators(.hidden)
             .scrollTargetBehavior(.viewAligned)
         }
+        .onDisappear {
+            vm.myExervisListToSave = []
+        }
         .padding(.horizontal)
         .toolbar {
             ToolbarItem (placement: .automatic) {
@@ -72,7 +75,7 @@ struct CreateYourRoutineView: View {
                         vm.addToMyExercises(titleRoutine: titleRoutine, routine: vm.myExervisListToSave)
                         dismiss()
                     } else {
-                        // crear una pantallita de alerta.
+                        showAlert.toggle()
                     }
                     
                 } label: {
@@ -80,6 +83,7 @@ struct CreateYourRoutineView: View {
                 }
             }
         }
+        .alert("Empty routine. Please add some exercises.", isPresented: $showAlert, actions: {})
         .gradientBackground(opacity1: 0.1, opacity2: 0.5)
     }
 }

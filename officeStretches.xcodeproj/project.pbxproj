@@ -199,7 +199,7 @@
 				5F5835AC2C7C970B00A904B9 /* TipKit */,
 				5FC108D22BFDDA48004B33FE /* Interactor */,
 				5FAA3C922BFD3C4000D4297F /* Interface */,
-				5FD3DEE22C480FD300B0E2CF /* Api Key */,
+				5FD3DEE22C480FD300B0E2CF /* ApiKey */,
 				5FAA3C8F2BFD3A6C00D4297F /* Model */,
 				5F6ECDCD2BFB20A60020644D /* Assets.xcassets */,
 				5F6ECDCF2BFB20A60020644D /* Preview Content */,
@@ -329,13 +329,13 @@
 			path = officeStretchesTests;
 			sourceTree = "<group>";
 		};
-		5FD3DEE22C480FD300B0E2CF /* Api Key */ = {
+		5FD3DEE22C480FD300B0E2CF /* ApiKey */ = {
 			isa = PBXGroup;
 			children = (
 				5FD3DEE32C48130E00B0E2CF /* configAPI.plist */,
 				5FD3DEE02C480FC200B0E2CF /* AppConfig.swift */,
 			);
-			name = "Api Key";
+			name = ApiKey;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

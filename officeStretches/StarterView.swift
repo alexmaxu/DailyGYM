@@ -29,7 +29,7 @@ struct StarterView: View {
                 
             }
             Text("Name:")
-            TextField("Name", text: $vmProfile.profile.name)
+            TextField("Enter your name", text: $vmProfile.profile.name)
                 .textFieldStyle(.roundedBorder)
             HStack {
                 Text("Level Sets:")
